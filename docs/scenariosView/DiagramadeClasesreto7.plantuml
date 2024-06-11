@@ -39,9 +39,9 @@ Class CoordinaciondeExtension {
 + void evaluarCredenciales()
 }
 
-Usuario <|-- Proponente
-Usuario <|-- DireccionExtension
-Usuario <|-- CoordinaciondeExtension
+Usuario <-- Proponente
+Usuario <-- DireccionExtension
+Usuario <-- CoordinaciondeExtension
 Proponente -- Curso : propone
 DptodeEducacionContinuayPermanente "   1..1   "  o--  "1..1"  Curso : forma parte de 
 Proponente "  1..*  " -- "  0.. 1  " DptodeEducacionContinuayPermanente : participa
