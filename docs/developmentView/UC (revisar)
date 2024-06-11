@@ -1,0 +1,23 @@
+@startuml
+skinparam actorStyle awesome
+:Persona: as a
+package DEU{
+:Dirección de Extensión: as b
+:Coordinación de Extensión: as c
+}
+package DECP{
+(UC1-Registrarse) as 1
+(UC2-Ingresar) as 2
+(UC3-Registrar Curso) as 3
+(UC4-Modificar Información) as 4
+(UC5-Evaluar Información) as 5
+}
+a --> 1
+a --> 2
+b --> 2
+c --> 2
+a --> 3
+a --> 4
+b --> 5
+c --> 5
+@enduml
