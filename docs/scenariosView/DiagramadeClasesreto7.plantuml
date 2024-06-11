@@ -7,10 +7,6 @@ Class Usuario {
 - String Personal
 }
 
-
-
-
-
 Class Proponente {
 - String resumenCurricular
 - String registroMercantil
