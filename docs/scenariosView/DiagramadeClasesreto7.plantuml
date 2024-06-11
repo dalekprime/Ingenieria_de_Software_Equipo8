@@ -1,0 +1,54 @@
+@startuml
+Class Usuario {
+- String nombre
+- String apellidos
+- Int cedula
+- String rif
+- String Personal
+}
+
+
+
+
+
+Class Proponente {
+- String resumenCurricular
+- String registroMercantil
+- String Aliado
++ void proporcionarDatos()
++ void registrarse()
+}
+
+Class Curso{
+- String nombre
+- String tipo
+- Int duración
+}
+
+Class DptodeEducacionContinuayPermanente {
+- list cursos
++ void registrarParticipante()
++ void darStatus()
++ void darRequisitos()
++ void registrarCurso()
+}
+
+Class DireccionExtension {
++ void evaluarPorbabilidad()
++ void evaluarInformacion()
+}
+
+Class CoordinaciondeExtension {
++ void evaluarFormulacionCurso()
++ void evaluarCredenciales()
+}
+
+Usuario <-- Proponente
+Usuario <-- DireccionExtension
+Usuario <-- CoordinaciondeExtension
+Proponente -- Curso : propone
+DptodeEducacionContinuayPermanente "   1..1   "  o--  "1..1"  Curso : forma parte de 
+Proponente "  1..*  " -- "  0.. 1  " DptodeEducacionContinuayPermanente : participa
+DptodeEducacionContinuayPermanente "1.. *"  -  "1..1" DireccionExtension : evalua
+DptodeEducacionContinuayPermanente "  1.. *  "  --  "    1..1    " CoordinaciondeExtension : evalua
+@enduml
