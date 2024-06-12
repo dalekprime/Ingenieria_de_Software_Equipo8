@@ -1,0 +1,13 @@
+@startuml
+state b <<choice>>
+state Registro{
+state j
+}
+state Ingreso{
+}
+state Proponer
+[*] --> b
+b --> Registro
+b --> Ingreso
+b --> Proponer
+@enduml
