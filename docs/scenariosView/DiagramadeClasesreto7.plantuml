@@ -1,4 +1,4 @@
-@startuml
+@startuml Diagrama de Clases 
 Class Usuario {
 - String nombre
 - String apellidos
@@ -8,17 +8,35 @@ Class Usuario {
 }
 
 Class Proponente {
+- bool tipo
 - String resumenCurricular
 - String registroMercantil
 - String Aliado
 + void proporcionarDatos()
 + void registrarse()
++ List <string> area
 }
 
+Class Aval{
+-string area 
+-int anniosDeExperiencia
+}
+
+Aval -- DireccionExtension
+Aval -- CoordinaciondeExtension
+Aval -- Proponente
+
+Class EstructuraDeCostos{
+    
+}
 Class Curso{
 - String nombre
-- String tipo
-- Int duración
+- String formato
+- Float duración
+- string tipo
++ Proponente proponente
+
+
 }
 
 Class DptodeEducacionContinuayPermanente {
@@ -39,9 +57,9 @@ Class CoordinaciondeExtension {
 + void evaluarCredenciales()
 }
 
-Usuario <-- Proponente
-Usuario <-- DireccionExtension
-Usuario <-- CoordinaciondeExtension
+Usuario <|-- Proponente
+Usuario <|-- DireccionExtension
+Usuario <|-- CoordinaciondeExtension
 Proponente -- Curso : propone
 DptodeEducacionContinuayPermanente "   1..1   "  o--  "1..1"  Curso : forma parte de 
 Proponente "  1..*  " -- "  0.. 1  " DptodeEducacionContinuayPermanente : participa
