@@ -1,0 +1,37 @@
+@startuml Estados
+state b <<choice>>
+
+state Registro{
+}
+
+state Ingreso{
+    state d <<choice>>
+    Ingreso --> d: Opcion
+    state Proponer
+    state modificar_Datos
+    d --> Proponer: 1
+    d --> modificar_Datos: 2
+    d --> [*]: Cerrar Sesion
+
+}
+Proponer --> Curso_en_Revision: Maximo 3 veces al año por curso
+[*] --> b: ¿Posee cuenta?
+b --> Registro: No
+b --> Ingreso: Si
+Registro --> b: Usuario Registrado
+
+state Curso_en_Revision
+state c <<choice>>
+Curso_en_Revision --> c: ¿Curso Aprobado?
+state Curso_Rechazado
+state Curso_Aceptado
+c --> Curso_Rechazado: No
+c --> Curso_Aceptado: Si
+state Curso_Procesado
+Curso_Aceptado --> Curso_Procesado: Cargar datos necesarios para la publicacion del curso
+state Curso_Publicado
+Curso_Procesado --> Curso_Publicado
+Curso_Publicado --> [*]
+Curso_Rechazado --> Proponer: Informar Causa de Rechazo
+
+@enduml
