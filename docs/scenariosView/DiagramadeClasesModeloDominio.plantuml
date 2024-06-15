@@ -1,0 +1,111 @@
+@startuml Diagrama de Clases 
+
+Class Persona{
+- nombres
+- apellidos
+- cedula
+- rif
+- islr
+- resumenCurricular
+- tituloUniversitario
+- proveniencia
+}
+
+Class PersonaJuridica{
+- ciRepresentante
+- registroMercantil
+}
+
+
+Persona <|-- PersonaJuridica
+Persona <|-- PersonaNatural
+Class Aliado{
+- tipo
+}
+Aliado -l- Persona: Puede ser
+
+
+
+Class Aval{
+- area 
+- añosDeExperiencia
+- tiempoDeValidez
+}
+
+class Cohorte{
+- añoDeIngreso
+- Personas
+}
+
+Class EstructuraDeCostos{
+- porcentajeDeLucro
+- costosasociados
+}
+
+Class FormulacionDeCurso{
+- denominacion
+- objetivos
+- fundamentacion
+- perfilIngresoyEgreso
+- perfilDocente
+- estrategiaDeEvaluacion
+- materialesYservicios
+- duracion
+- estructuraDeCostos
+- cronogramaAnual
+}
+
+
+Class Curso{
+- nombre
+- modalidad
+- tipo
+}
+
+Curso *-- FormulacionDeCurso
+Persona -- Curso :  propone
+
+
+Class Usuario{
+    - ID
+    - rol
+    - nombreDeUsuario
+    - Clave
+    - Registro
+}
+Class UsuarioAdministrativo{
+    -cargo
+    -enteAlQuePertenece
+}
+
+UsuarioAdministrativo --|> Usuario
+
+Usuario "  1   " -- " 1 " Persona
+
+
+Class CartadeIntencion{
+- cursosAprobados
+- finesdelucro
+}
+
+Class CartadeCompromiso{
+- compromisos
+}
+
+Class EnteValidador{
+    - nombre
+    - competencias
+    - tiempoDeValidacion
+}
+
+EnteValidador "  1  "--"  1  " UsuarioAdministrativo
+EnteValidador -- FormulacionDeCurso : evalua
+Aval <-- EnteValidador : valida
+Aval --> Persona : otorga
+CartadeIntencion <-- EnteValidador : genera
+CartadeIntencion --> Persona : entrega
+Curso " 1 "<-- " * " Cohorte : pertenece
+CartadeCompromiso -- EnteValidador
+CartadeCompromiso -- Aliado
+EstructuraDeCostos --o Curso 
+@enduml
