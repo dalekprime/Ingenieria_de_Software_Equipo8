@@ -1,0 +1,61 @@
+@startuml Estados
+state b <<choice>>
+state Interzaz_de_Inicio{
+    state Registro{
+}
+
+    state Ingreso{
+}
+}
+state Validacion{
+ state x <<fork>>
+
+    state Curso_en_Revision
+    state Curso_Rechazado
+    state Curso_Aceptado
+    state c <<choice>>
+    Curso_en_Revision --> x: ¿Curso Aprobado?
+state m <<fork>>
+state Validacion_De_Credenciales
+
+m -->  Validacion_De_Credenciales
+m --> Curso_en_Revision: Maximo 3 veces al año por curso
+Validacion_De_Credenciales --> x : ¿Credenciales validas?
+x --> c : ¿Se cumplen?
+}
+
+state n <<fork>>
+Curso_Aceptado --> n
+n --> Curso_Procesado: Cargar datos necesarios para la publicacion del curso
+n --> Emision_De_Aval_Aceptado
+Emision_De_Aval_Aceptado --> [*]
+Ingreso --> Sesion_Interfaz
+    state Sesion_Interfaz{
+    state d <<choice>>
+    Dashboard --> d: Opcion
+    state Curso_Propuesto
+    state Edicion
+    d --> Curso_Propuesto: 1
+    d --> Edicion: 2
+    d --> [*]: Cerrar Sesion
+    Curso_Propuesto --> m
+    }
+
+[*] --> b: ¿Posee cuenta?
+b --> Registro: No
+b --> Ingreso: Si
+Registro --> b: Usuario Registrado
+
+
+
+
+c --> Curso_Rechazado: No
+c --> Curso_Aceptado: Si
+state Curso_Procesado
+state Curso_Publicado
+Curso_Procesado --> Curso_Publicado
+Curso_Publicado --> [*]
+Curso_Rechazado --> Emision_De_Aval_Rechazado
+Emision_De_Aval_Rechazado --> [*] : Informar Causa de Rechazo
+
+@enduml

@@ -22,11 +22,12 @@ Persona <|-- PersonaNatural
 Class Aliado{
 - tipo
 }
-Aliado -l- Persona: Puede ser
+Aliado --l- Persona: Puede ser
 
 
 
 Class Aval{
+- estado
 - area 
 - añosDeExperiencia
 - tiempoDeValidez
@@ -107,5 +108,5 @@ CartadeIntencion --> Persona : entrega
 Curso " 1 "<-- " * " Cohorte : pertenece
 CartadeCompromiso -- EnteValidador
 CartadeCompromiso -- Aliado
-EstructuraDeCostos --o Curso 
+EstructuraDeCostos -r-----o Curso 
 @enduml
