@@ -7,7 +7,7 @@ left to right direction
 :Dirección de Extensión: as b
 :Coordinación de Extensión: as c
 :Concejo de Facultad: as d
-
+:Comision de Extension: as f
 
 rectangle DECP{
 (UC1-Registrarse) as 1
@@ -23,8 +23,9 @@ rectangle DECP{
 (UC11-Otorga el Aval) as 11
 (UC12-Modificar el Curso) as 12
 (UC13-Modificar Datos de Usuario) as 13
+(UC14-Evaluar Propuesta) as 14
 }
-
+f <|-- e
 1 <-- e
 b --|> e
 c --|> e
@@ -39,9 +40,10 @@ a --> 4
 9 <-- c
 10 <-- d
 3 .> 6 : include
-5 .> 11 : include
+14 .> 11 : include
 10 .> 11 : include
 11 .> 7: include
 12 .> 4: extend
 13 .> 4: extend
+14 <-- f
 @enduml
