@@ -1,0 +1,47 @@
+@startuml usecase
+skinparam actorStyle awesome
+left to right direction
+:Persona: as a
+
+:Ente Validador: as e
+:Dirección de Extensión: as b
+:Coordinación de Extensión: as c
+:Concejo de Facultad: as d
+
+
+rectangle DECP{
+(UC1-Registrarse) as 1
+(UC2-Ingresar) as 2 
+(UC3-Registrar Curso) as 3
+(UC6-Presentar Cronograma y Estructura de Costos) as 6
+(UC4-Modificar Información) as 4
+(UC5-Evaluar Información) as 5
+(UC7-Carta de Intencion) as 7
+(UC8-Verificacion del Formulario del Curso) as 8
+(UC9-Verificacion de Credenciales) as 9
+(UC10-Evaluar Propuesta de Diplomado) as 10
+(UC11-Otorga el Aval) as 11
+(UC12-Modificar el Curso) as 12
+(UC13-Modificar Datos de Usuario) as 13
+}
+
+1 <-- e
+b --|> e
+c --|> e
+d --|> e
+a --> 1
+a --> 2
+e --> 2
+a --> 3
+a --> 4
+5 <-- b
+8 <-- c
+9 <-- c
+10 <-- d
+3 .> 6 : include
+5 .> 11 : include
+10 .> 11 : include
+11 .> 7: include
+12 .> 4: extend
+13 .> 4: extend
+@enduml
