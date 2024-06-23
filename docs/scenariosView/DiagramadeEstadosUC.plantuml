@@ -1,0 +1,115 @@
+@startuml DiagramadeEstadosUC
+state PlataformaEnUso{
+state Registrarse{
+state b <<choice>>
+state c <<choice>>
+[*] --> Llenarcamposdedatos
+Llenarcamposdedatos --> b: ¿Natural o Juridica?
+state DatosLlenados
+b --> DatosLlenados: Natural
+b --> SolicitarDatosJuridicos: Juridica
+SolicitarDatosJuridicos --> DatosLlenados
+DatosLlenados --> c : ¿Registro Exitoso?
+c --> [*] : Si
+c --> Llenarcamposdedatos : No o Datos vacios
+}
+
+state Ingresar {
+state SolicitarUsuarioYClave
+State UsuarioNoEncontrado
+State ClaveIncorrecta
+state a <<choice>>
+state d <<choice>>
+[*] --> SolicitarUsuarioYClave
+SolicitarUsuarioYClave --> a : ¿Ingreso Exitoso?
+a --> [*]: Si
+a --> d: ¿Que ocurrio?
+d --> UsuarioNoEncontrado
+d --> ClaveIncorrecta
+ClaveIncorrecta --> SolicitarUsuarioYClave
+UsuarioNoEncontrado --> SolicitarUsuarioYClave
+}
+
+state RegistrarCurso{
+State LlenarFormulario
+State FormularioEnviado
+State PropuestaEnEvaluacion
+State e <<choice>>
+state f <<choice>>
+State EnvioDeCronogramaYEstructuradeCostos
+state PropuestaPorCorreguir
+state PropuestaCorreguida
+[*] --> LlenarFormulario
+LlenarFormulario --> e: ¿Campos completos?
+e --> LlenarFormulario : No 
+e --> FormularioEnviado: Si
+FormularioEnviado --> PropuestaEnEvaluacion
+PropuestaEnEvaluacion --> f: ¿Aprobada?
+f --> EnvioDeCronogramaYEstructuradeCostos: Si
+f --> PropuestaPorCorreguir: No
+PropuestaPorCorreguir --> PropuestaCorreguida
+PropuestaCorreguida --> PropuestaEnEvaluacion
+EnvioDeCronogramaYEstructuradeCostos --> [*]
+}
+
+state EvaluarInformacion{
+state RecaudosRecibido
+state g <<fork>>
+state InformacionRecbida
+state h <<fork>>
+state i <<choice>>
+state end <<end>>
+[*] --> g
+g --> RecaudosRecibido
+g --> InformacionRecbida
+RecaudosRecibido --> h
+InformacionRecbida --> h
+h --> i: ¿Estan correctos?
+i --> Rechazar: No
+i --> end : Si
+Rechazar -->[*] : Informar Razon de Rechazo
+}
+
+state VerificaciondelFormulariodeCurso{
+state FormularioRecibido
+state RevisadoFormulario
+state formulariocorrecto <<choice>>
+state FormularioEnviadoParaCorreccion
+state end1 <<end>>
+[*] --> FormularioRecibido
+FormularioRecibido --> RevisadoFormulario
+RevisadoFormulario --> formulariocorrecto: ¿Llenado correctamente?
+formulariocorrecto --> [*]: Si
+formulariocorrecto --> FormularioEnviadoParaCorreccion: No
+FormularioEnviadoParaCorreccion --> end1
+}
+
+state VerificaciondeCredenciales{
+state CredencialesRecbidas
+state CredencialesEvaluadas
+state credencialescorrectas <<choice>>
+state DevolverCredenciales
+state end2 <<end>>
+[*] --> CredencialesRecbidas
+CredencialesRecbidas --> credencialescorrectas
+credencialescorrectas --> DevolverCredenciales: No
+credencialescorrectas --> CredencialesEvaluadas: Si
+DevolverCredenciales --> [*]
+CredencialesEvaluadas --> end2
+}
+
+state EvaluarPropuesta{
+state PropuestaDeCursoRecibida
+state PropuestaDeCursoEvaluada
+state DevolverPropuesta
+state preguntaderevision <<choice>>
+state end3 <<end>>
+[*] --> PropuestaDeCursoRecibida
+PropuestaDeCursoRecibida --> preguntaderevision: ¿Propuesta correcta?
+preguntaderevision --> DevolverPropuesta: No
+preguntaderevision --> PropuestaDeCursoEvaluada
+DevolverPropuesta --> end3
+PropuestaDeCursoEvaluada --> [*]
+}
+}
+@enduml
