@@ -55,15 +55,15 @@ EnvioDeCronogramaYEstructuradeCostos --> [*]
 state EvaluarInformacion{
 state RecaudosRecibido
 state g <<fork>>
-state InformacionRecbida
+state InformacionRecibida
 state h <<fork>>
 state i <<choice>>
 state end <<end>>
 [*] --> g
 g --> RecaudosRecibido
-g --> InformacionRecbida
+g --> InformacionRecibida
 RecaudosRecibido --> h
-InformacionRecbida --> h
+InformacionRecibida --> h
 h --> i: ¿Estan correctos?
 i --> Rechazar: No
 i --> end : Si
