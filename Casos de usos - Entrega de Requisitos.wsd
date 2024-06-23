@@ -25,7 +25,7 @@ rectangle DECP{
 (UC13-Modificar Datos de Usuario) as 13
 (UC14-Evaluar Propuesta) as 14
 }
-e <|-- f
+f --|> e
 1 <-- e
 b --|> e
 c --|> e
