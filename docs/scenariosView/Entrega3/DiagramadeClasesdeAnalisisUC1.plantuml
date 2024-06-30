@@ -1,0 +1,12 @@
+@startuml analisisClaseDiagramaUC1
+
+actor Usuario as Usuario
+boundary "IU Solicitud de Datos" as PantallaDatos
+control "Base de datos" as Controlador 
+entity Usuario as UsuarioEntidad
+
+Usuario -r- PantallaDatos 
+PantallaDatos -r- Controlador : almacena
+Controlador -- UsuarioEntidad : crea
+
+@enduml 

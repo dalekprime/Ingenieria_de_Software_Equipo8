@@ -1,0 +1,14 @@
+@startuml analisisClaseDiagramaUC6
+
+actor  Persona as Persona
+boundary "IU Pantalla Principal" as PantallaPrincipal
+boundary "IU Mis Cursos Propuestos" as MisCursosPropuestos
+control "Base de datos" as Controlador
+entity Curso as Curso
+entity "Estructura de Costos" as Costo
+Persona -r- PantallaPrincipSal
+PantallaPrincipal -r- MisCursosPropuestos
+MisCursosPropuestos -r- Controlador 
+Controlador -r- Curso : Muestra
+Controlador -- Costo: Registra
+@enduml 

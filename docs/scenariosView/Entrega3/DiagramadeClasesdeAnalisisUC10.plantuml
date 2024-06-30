@@ -1,0 +1,16 @@
+@startuml analisisClaseDiagramaUC10
+
+actor  "Consejo" as Consejo
+boundary "IU Cursos Propuestos" as Propuesta
+control "Base de datos" as Controlador
+entity Curso as Curso
+control "Validador Propuesta" as Validador
+boundary "IU Cursos Validados" as Validados
+Consejo -r- Propuesta
+Propuesta -r- Controlador 
+Controlador -- Curso: Muestra
+Curso -- Validador
+Validador -r- Validados
+Validados -- Curso
+
+@enduml

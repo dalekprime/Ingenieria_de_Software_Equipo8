@@ -1,0 +1,18 @@
+@startuml analisisClaseDiagramaUC13
+
+actor  Persona as Persona
+boundary "IU Modificacion de datos" as Propuesta
+control "Base de datos" as Controlador
+entity Persona as Usuario
+boundary "IU Datos para modificar" as Formulario
+control "Revision de campos" as Revision
+boundary "IU Datos modificados" as Modificacion
+Persona -r- Propuesta
+Propuesta -r- Controlador 
+Controlador -r- Usuario: Muestra
+Usuario -- Formulario
+Formulario -down- Revision
+Revision -r- Modificacion
+Modificacion -r- Usuario
+
+@enduml

@@ -1,0 +1,19 @@
+@startuml analisisClaseDiagramaUC11
+
+actor  "Comision de Extension" as Comision
+actor  "Consejo de Facultad" as Consejo
+boundary "IU Cursos Propuestos" as Propuesta
+control "Base de datos" as Controlador
+entity Curso as Curso
+boundary "IU Avales por entregar" as Avales
+control "Validacion de Avales" as Validador
+entity Aval as Aval
+Consejo -- Propuesta
+Comision -- Propuesta
+Propuesta -r- Controlador 
+Controlador -r- Curso: Muestra
+Curso -up- Avales
+Avales -r- Validador
+Validador -- Aval
+
+@enduml

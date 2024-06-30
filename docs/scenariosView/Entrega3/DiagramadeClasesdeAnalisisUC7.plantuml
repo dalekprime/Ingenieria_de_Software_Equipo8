@@ -1,0 +1,17 @@
+@startuml analisisClaseDiagramaUC7
+
+actor  "Comision de Extension" as Comision
+actor  "Consejo de Facultad" as Consejo
+boundary "IU Avales Tecnicos" as AvalesTecnicos
+control "Base de datos" as Controlador
+boundary "IU Confirmacion Carta de intencion" as PantallaCarta
+entity "Carta de intencion" as CartaInten
+entity Persona as Persona
+Consejo -d- AvalesTecnicos
+Comision -r- AvalesTecnicos
+AvalesTecnicos -r- Controlador 
+Controlador -r- CartaInten 
+CartaInten -up- PantallaCarta
+CartaInten -r- Persona
+
+@enduml 

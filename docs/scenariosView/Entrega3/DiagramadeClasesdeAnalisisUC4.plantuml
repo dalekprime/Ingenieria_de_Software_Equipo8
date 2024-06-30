@@ -1,0 +1,17 @@
+@startuml analisisClaseDiagramaUC4
+
+actor Persona as Persona
+boundary "IU Pantalla Principal" as PantallaPrincipal
+boundary "IU Gestion de usuario" as GestionUsuario
+boundary "IU Modificacion de datos" as ModificacionDeDatos 
+control "Base de datos" as Controlador
+entity "Persona Natural" as PersonaNatural
+entity "Persona Juridica" as PersonaJuridica
+Persona -r- PantallaPrincipal
+PantallaPrincipal -r- GestionUsuario
+GestionUsuario -r- ModificacionDeDatos
+ModificacionDeDatos -r- Controlador : corrige
+Controlador -- PersonaNatural : Actualiza
+Controlador -- PersonaJuridica : Actualiza
+
+@enduml 

@@ -1,0 +1,18 @@
+@startuml analisisClaseDiagramaUC12
+
+actor  Persona as Persona
+boundary "IU Modificacion de datos" as Propuesta
+control "Base de datos" as Controlador
+entity Curso as Curso
+boundary "IU Formulario de curso" as Formulario
+control "Revision de campos" as Revision
+boundary "IU Formulacion modificada" as Modificacion
+Persona -r- Propuesta
+Propuesta -r- Controlador 
+Controlador -r- Curso: Muestra
+Curso -- Formulario
+Formulario -down- Revision
+Revision -r- Modificacion
+Modificacion -r- Curso
+
+@enduml
