@@ -1,0 +1,43 @@
+@startuml Diagrama de Paquete
+package "Gestion de Usuario"{
+package "Modificar Informacion de Usuario"{
+Class Persona
+class PersonaJuridica
+class PersonaNatural
+Persona <|-- PersonaJuridica
+Persona <|-- PersonaNatural
+}
+package "Verificacion"{
+class EnteValidador
+}
+package "Ingreso de Usuario"{
+class Usuario 
+class UsuarioAdministrativo
+}
+class Aliado
+}
+
+package "Gestion de Curso"{
+class Curso
+class EstructuraDeCostos
+class FormulacionDeCurso
+class Cohorte
+Curso --o EstructuraDeCostos
+Curso *-- FormulacionDeCurso
+Cohorte --* Curso
+}
+package "Documentos"{
+class CartaDeIntencion
+class CartaDeCompromiso
+class Aval
+Aval --> CartaDeIntencion
+}
+Aval --> CartaDeCompromiso
+CartaDeCompromiso --> Aliado
+Aliado --> Persona
+EnteValidador  -->  Curso
+EnteValidador  --> Aval 
+Persona --> Curso
+UsuarioAdministrativo --|> Usuario
+EnteValidador --|> UsuarioAdministrativo
+@enduml
