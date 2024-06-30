@@ -1,0 +1,17 @@
+@startuml analisisClaseDiagramaUC14
+
+actor  "Comision de Extension" as Comision
+boundary ":IU Cursos propuestos" as Propuesta
+control ":Base de datos" as Controlador
+entity ":Curso" as Curso
+boundary ":IU Cursos a evaluar" as Formulario
+control ":Evaluador de Propuestas" as Revision
+boundary ":IU Estado de propuesta" as Estado
+Comision -r- Propuesta
+Propuesta -r- Controlador: Buscar(curso) 
+Controlador -r- Curso: Mostrar()
+Curso -d- Formulario: irA()
+Formulario -l- Revision : Revisar()
+Revision -l- Estado: Mostrar()
+
+@enduml

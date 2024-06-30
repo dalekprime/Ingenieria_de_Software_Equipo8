@@ -1,0 +1,15 @@
+@startuml analisisClaseDiagramaUC8
+
+actor  "Coordinacion de extension" as Coordinacion
+boundary ":IU Formulacion de cursos" as FormulacionCurso
+control ":Base de datos" as Controlador
+entity ":Curso" as Curso
+boundary ":IU Crendenciales de Facilitador" as Credenciales
+control ":Evaluador" as Evaluacion
+Coordinacion -r- FormulacionCurso
+FormulacionCurso -r- Controlador: Buscar(proponente) 
+Controlador -r- Curso: Mostrar()
+Curso -r- Evaluacion: evaluar() 
+Evaluacion -r- Credenciales: procesar()
+
+@enduml 

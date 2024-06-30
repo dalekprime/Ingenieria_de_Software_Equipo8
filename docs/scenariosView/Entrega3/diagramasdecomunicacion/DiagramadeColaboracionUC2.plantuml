@@ -1,0 +1,14 @@
+@startuml analisisClaseDiagramaUC2
+
+actor Usuario as Usuario
+boundary "IU Solicitud de Datos de ingreso" as view_datos
+control "Base de datos" as controlador 
+entity Usuario as user
+boundary "IU Pantalla Principal" as a
+boundary "IU Datos invalidos" as b
+Usuario -r- view_datos 
+view_datos -r- controlador : Validar()
+controlador -r- user : Comparar()
+controlador .up. a :darAcceso()
+controlador .. b :Rechazar()
+@enduml 

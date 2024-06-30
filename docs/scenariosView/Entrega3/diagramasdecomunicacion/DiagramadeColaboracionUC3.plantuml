@@ -1,0 +1,16 @@
+@startuml DiagramaComunicacionUC3
+
+actor Persona as Persona
+boundary ":IU Pantalla Principal" as PantallaPrincipal
+boundary ":IU Formulario de curso" as FormularioCurso
+control ":Base de datos" as Controlador 
+entity ":Curso" as Curso
+boundary ":IU Curso Registrado" as CursoRegistrado
+boundary ":IU Campos incompletos" as CamposIncompletos
+Persona -r- PantallaPrincipal
+PantallaPrincipal -r- FormularioCurso : llevarA(opcion)
+FormularioCurso -r- Controlador : enviarFormulario()
+Controlador -r- Curso: Nuevo() 
+Controlador .. CursoRegistrado: Registrar() 
+Controlador .. CamposIncompletos: validarCampos() 
+@enduml 

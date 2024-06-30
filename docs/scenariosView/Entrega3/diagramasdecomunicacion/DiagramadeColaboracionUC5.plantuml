@@ -1,0 +1,16 @@
+@startuml analisisClaseDiagramaUC5
+
+actor  "Direccion de extension " as Direccion
+boundary ":IU Pantalla Principal" as PantallaPrincipal
+boundary ":IU Cursos Propuestos" as CursosPropuestos
+control ":Base de datos" as Controlador 
+entity ":Curso" as Curso
+entity ":Coordinacion de Extension" as Coordinacion
+control ":Validadores" as Validar
+Direccion -r- PantallaPrincipal
+PantallaPrincipal -r- CursosPropuestos : irA(opcion)
+CursosPropuestos -r- Controlador : seleccionar(curso)
+Controlador -r- Curso : mostrar()
+Curso -r- Validar : validar()
+Validar -r- Coordinacion : procesar()
+@enduml  

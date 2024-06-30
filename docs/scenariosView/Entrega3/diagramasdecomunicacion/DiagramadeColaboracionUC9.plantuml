@@ -1,0 +1,18 @@
+@startuml analisisClaseDiagramaUC9
+
+actor  "Coordinacion de extension" as Coordinacion
+boundary ":IU Credenciales de Facilitador" as Credenciales
+control ":Base de datos" as Controlador
+entity Persona as Facilitador
+boundary ":IU Cursos propuestos" as PropuestosCursos
+entity ":Curso" as Curso
+entity ":Consejo de Facultad" as Consejo
+entity ":Comision de Extension" as Comision
+Coordinacion -r- Credenciales 
+Credenciales -r- Controlador : validar()
+Controlador -r- Facilitador: mostrar()
+Facilitador -r- PropuestosCursos : irA()
+PropuestosCursos -r- Curso : listar()
+Curso -- Consejo : mostrar()
+Curso -- Comision : mostrar()
+@enduml
