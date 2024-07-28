@@ -118,6 +118,9 @@ public class StandarTemplate extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonCursosMouseEntered(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonCursosMouseExited(evt);
+            }
         });
 
         javax.swing.GroupLayout buttonCursosLayout = new javax.swing.GroupLayout(buttonCursos);
@@ -137,6 +140,9 @@ public class StandarTemplate extends javax.swing.JFrame {
         buttonDatos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonDatosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonDatosMouseExited(evt);
             }
         });
 
@@ -158,6 +164,9 @@ public class StandarTemplate extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonInfoMouseEntered(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonInfoMouseExited(evt);
+            }
         });
 
         javax.swing.GroupLayout buttonInfoLayout = new javax.swing.GroupLayout(buttonInfo);
@@ -177,6 +186,9 @@ public class StandarTemplate extends javax.swing.JFrame {
         buttonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonSalirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonSalirMouseExited(evt);
             }
         });
 
@@ -198,6 +210,9 @@ public class StandarTemplate extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonPerfilMouseEntered(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonPerfilMouseExited(evt);
+            }
         });
 
         javax.swing.GroupLayout buttonPerfilLayout = new javax.swing.GroupLayout(buttonPerfil);
@@ -217,6 +232,9 @@ public class StandarTemplate extends javax.swing.JFrame {
         buttonNotificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonNotificacionesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonNotificacionesMouseExited(evt);
             }
         });
 
@@ -335,6 +353,30 @@ public class StandarTemplate extends javax.swing.JFrame {
     private void buttonSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalirMouseEntered
         buttonSalir.setBorder(BorderFactory.createLineBorder(Color.white));
     }//GEN-LAST:event_buttonSalirMouseEntered
+
+    private void buttonCursosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonCursosMouseExited
+        buttonCursos.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+    }//GEN-LAST:event_buttonCursosMouseExited
+
+    private void buttonDatosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDatosMouseExited
+        buttonDatos.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+    }//GEN-LAST:event_buttonDatosMouseExited
+
+    private void buttonInfoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonInfoMouseExited
+        buttonInfo.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+    }//GEN-LAST:event_buttonInfoMouseExited
+
+    private void buttonNotificacionesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNotificacionesMouseExited
+        buttonNotificaciones.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+    }//GEN-LAST:event_buttonNotificacionesMouseExited
+
+    private void buttonPerfilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonPerfilMouseExited
+        buttonPerfil.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+    }//GEN-LAST:event_buttonPerfilMouseExited
+
+    private void buttonSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalirMouseExited
+        buttonSalir.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+    }//GEN-LAST:event_buttonSalirMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
