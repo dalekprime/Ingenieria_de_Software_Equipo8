@@ -29,6 +29,7 @@ public class StandarTemplate extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         buttonNotificaciones = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        CC_Icon = new javax.swing.JLabel();
         mainPanelLeft = new javax.swing.JPanel();
         mainPanelRight = new javax.swing.JPanel();
 
@@ -113,7 +114,7 @@ public class StandarTemplate extends javax.swing.JFrame {
             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        mainBar.add(buttonHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 40));
+        mainBar.add(buttonHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 80, 40));
 
         buttonCursos.setBackground(new java.awt.Color(93, 54, 132));
         buttonCursos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -143,7 +144,7 @@ public class StandarTemplate extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        mainBar.add(buttonCursos, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 50, 40));
+        mainBar.add(buttonCursos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 50, 40));
 
         buttonDatos.setBackground(new java.awt.Color(93, 54, 132));
         buttonDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -172,7 +173,7 @@ public class StandarTemplate extends javax.swing.JFrame {
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        mainBar.add(buttonDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 50, 40));
+        mainBar.add(buttonDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 50, 40));
 
         buttonInfo.setBackground(new java.awt.Color(93, 54, 132));
         buttonInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -201,7 +202,7 @@ public class StandarTemplate extends javax.swing.JFrame {
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        mainBar.add(buttonInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 50, 40));
+        mainBar.add(buttonInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 50, 40));
 
         buttonSalir.setBackground(new java.awt.Color(93, 54, 132));
         buttonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -289,6 +290,10 @@ public class StandarTemplate extends javax.swing.JFrame {
         );
 
         mainBar.add(buttonNotificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 50, 40));
+
+        CC_Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/src/CCUCV_LOGOTiny.png"))); // NOI18N
+        CC_Icon.setText("jLabel8");
+        mainBar.add(CC_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 10, 40, 40));
 
         backgroundPanel.add(mainBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 60));
 
@@ -419,6 +424,7 @@ public class StandarTemplate extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CC_Icon;
     private javax.swing.JPanel backgroundPanel;
     private javax.swing.JPanel buttonCerrar;
     private javax.swing.JLabel buttonCerrarText;

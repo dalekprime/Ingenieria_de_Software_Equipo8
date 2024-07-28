@@ -23,6 +23,7 @@ public class LoginIU extends javax.swing.JFrame {
         buttonCerrarText = new javax.swing.JLabel();
         buttonHome = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        CC_Icon = new javax.swing.JLabel();
         body = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -116,7 +117,11 @@ public class LoginIU extends javax.swing.JFrame {
             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        mainBar.add(buttonHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 40));
+        mainBar.add(buttonHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 80, 40));
+
+        CC_Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/src/CCUCV_LOGOTiny.png"))); // NOI18N
+        CC_Icon.setText("jLabel8");
+        mainBar.add(CC_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 40));
 
         backgroundPanel.add(mainBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 60));
 
@@ -373,6 +378,7 @@ public class LoginIU extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CC_Icon;
     private javax.swing.JPanel backgroundPanel;
     private javax.swing.JPanel body;
     private javax.swing.JPanel buttonCancelar;
