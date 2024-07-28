@@ -22,11 +22,17 @@ public class StandarTemplate extends javax.swing.JFrame {
         buttonHome = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         buttonCursos = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         buttonDatos = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         buttonInfo = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         buttonSalir = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
         buttonPerfil = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         buttonNotificaciones = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         mainPanelLeft = new javax.swing.JPanel();
         mainPanelRight = new javax.swing.JPanel();
 
@@ -114,6 +120,7 @@ public class StandarTemplate extends javax.swing.JFrame {
         mainBar.add(buttonHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 40));
 
         buttonCursos.setBackground(new java.awt.Color(93, 54, 132));
+        buttonCursos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonCursos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonCursosMouseEntered(evt);
@@ -123,20 +130,27 @@ public class StandarTemplate extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Cursos");
+
         javax.swing.GroupLayout buttonCursosLayout = new javax.swing.GroupLayout(buttonCursos);
         buttonCursos.setLayout(buttonCursosLayout);
         buttonCursosLayout.setHorizontalGroup(
             buttonCursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
         buttonCursosLayout.setVerticalGroup(
             buttonCursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         mainBar.add(buttonCursos, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 50, 40));
 
         buttonDatos.setBackground(new java.awt.Color(93, 54, 132));
+        buttonDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonDatos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonDatosMouseEntered(evt);
@@ -146,20 +160,26 @@ public class StandarTemplate extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Datos");
+
         javax.swing.GroupLayout buttonDatosLayout = new javax.swing.GroupLayout(buttonDatos);
         buttonDatos.setLayout(buttonDatosLayout);
         buttonDatosLayout.setHorizontalGroup(
             buttonDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
         buttonDatosLayout.setVerticalGroup(
             buttonDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         mainBar.add(buttonDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 50, 40));
 
         buttonInfo.setBackground(new java.awt.Color(93, 54, 132));
+        buttonInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonInfo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonInfoMouseEntered(evt);
@@ -169,20 +189,26 @@ public class StandarTemplate extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Info");
+
         javax.swing.GroupLayout buttonInfoLayout = new javax.swing.GroupLayout(buttonInfo);
         buttonInfo.setLayout(buttonInfoLayout);
         buttonInfoLayout.setHorizontalGroup(
             buttonInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
         buttonInfoLayout.setVerticalGroup(
             buttonInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         mainBar.add(buttonInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 50, 40));
 
         buttonSalir.setBackground(new java.awt.Color(93, 54, 132));
+        buttonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonSalirMouseEntered(evt);
@@ -192,20 +218,26 @@ public class StandarTemplate extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Salir");
+
         javax.swing.GroupLayout buttonSalirLayout = new javax.swing.GroupLayout(buttonSalir);
         buttonSalir.setLayout(buttonSalirLayout);
         buttonSalirLayout.setHorizontalGroup(
             buttonSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
         buttonSalirLayout.setVerticalGroup(
             buttonSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         mainBar.add(buttonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 50, 40));
 
         buttonPerfil.setBackground(new java.awt.Color(93, 54, 132));
+        buttonPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonPerfil.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonPerfilMouseEntered(evt);
@@ -215,20 +247,26 @@ public class StandarTemplate extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Perfil");
+
         javax.swing.GroupLayout buttonPerfilLayout = new javax.swing.GroupLayout(buttonPerfil);
         buttonPerfil.setLayout(buttonPerfilLayout);
         buttonPerfilLayout.setHorizontalGroup(
             buttonPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
         buttonPerfilLayout.setVerticalGroup(
             buttonPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         mainBar.add(buttonPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, 50, 40));
 
         buttonNotificaciones.setBackground(new java.awt.Color(93, 54, 132));
+        buttonNotificaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonNotificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonNotificacionesMouseEntered(evt);
@@ -238,15 +276,20 @@ public class StandarTemplate extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Notis");
+
         javax.swing.GroupLayout buttonNotificacionesLayout = new javax.swing.GroupLayout(buttonNotificaciones);
         buttonNotificaciones.setLayout(buttonNotificacionesLayout);
         buttonNotificacionesLayout.setHorizontalGroup(
             buttonNotificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
         buttonNotificacionesLayout.setVerticalGroup(
             buttonNotificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         mainBar.add(buttonNotificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 50, 40));
@@ -390,7 +433,13 @@ public class StandarTemplate extends javax.swing.JFrame {
     private javax.swing.JPanel buttonNotificaciones;
     private javax.swing.JPanel buttonPerfil;
     private javax.swing.JPanel buttonSalir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel mainBar;
     private javax.swing.JPanel mainPanelLeft;
     private javax.swing.JPanel mainPanelRight;
