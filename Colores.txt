@@ -1,0 +1,4 @@
+Negro 2A282C new java.awt.Color(42, 40, 44)
+Morado Oscuro 5D3684 new java.awt.Color(93, 54, 132
+Morado Claro 7745A8 
+Rosado D8C5EA new java.awt.Color(216, 197, 234)
