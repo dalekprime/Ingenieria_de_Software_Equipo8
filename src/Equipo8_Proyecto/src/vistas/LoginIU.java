@@ -33,7 +33,7 @@ public class LoginIU extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         buttonCancelar = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        textRegister = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -236,14 +236,20 @@ public class LoginIU extends javax.swing.JFrame {
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Registrarse");
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        textRegister.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        textRegister.setForeground(new java.awt.Color(255, 255, 255));
+        textRegister.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textRegister.setText("Registrarse");
+        textRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        textRegister.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                textRegisterMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                textRegisterMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                textRegisterMouseExited(evt);
             }
         });
 
@@ -267,7 +273,7 @@ public class LoginIU extends javax.swing.JFrame {
                 .addGap(140, 140, 140)
                 .addComponent(inputCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(textRegister, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         bodyLayout.setVerticalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,7 +291,7 @@ public class LoginIU extends javax.swing.JFrame {
                     .addComponent(buttonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(jLabel4)
+                .addComponent(textRegister)
                 .addGap(77, 77, 77))
         );
 
@@ -392,12 +398,20 @@ public class LoginIU extends javax.swing.JFrame {
         jLabel2.setForeground(Color.white);
     }//GEN-LAST:event_jLabel2MouseExited
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+    private void textRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textRegisterMouseClicked
         RegisterIU registro = new RegisterIU();
         registro.setLocationRelativeTo(null);
         registro.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jLabel4MouseClicked
+    }//GEN-LAST:event_textRegisterMouseClicked
+
+    private void textRegisterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textRegisterMouseEntered
+        textRegister.setForeground(new java.awt.Color(216, 197, 234));
+    }//GEN-LAST:event_textRegisterMouseEntered
+
+    private void textRegisterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textRegisterMouseExited
+        textRegister.setForeground(Color.white);
+    }//GEN-LAST:event_textRegisterMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CC_Icon;
@@ -413,9 +427,9 @@ public class LoginIU extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel mainBar;
+    private javax.swing.JLabel textRegister;
     // End of variables declaration//GEN-END:variables
 }
