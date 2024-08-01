@@ -1,8 +1,6 @@
 package controladores;
 
 import vistas.LoginIU;
-import vistas.RegisterIU;
-import vistas.StandarTemplate;
 
 /**
  *
@@ -11,10 +9,7 @@ import vistas.StandarTemplate;
 public class Main{
     public static void main(String[] args) {
         LoginIU login = new LoginIU();
-        //login.setVisible(true);
-        StandarTemplate template = new StandarTemplate();
-        //template.setVisible(true);
-        RegisterIU register = new RegisterIU();
-        register.setVisible(true);
+        login.setLocationRelativeTo(null);
+        login.setVisible(true);
     };
 };
