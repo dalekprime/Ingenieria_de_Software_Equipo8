@@ -808,6 +808,10 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
        javax.swing.JOptionPane.showMessageDialog(this, "Proyecto Registrado. \n Espere a que sea revisado y evaluado.");
+       UsuarioView userView = new UsuarioView();
+       userView.setLocationRelativeTo(null);
+       userView.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_jLabel13MouseClicked
 
 
