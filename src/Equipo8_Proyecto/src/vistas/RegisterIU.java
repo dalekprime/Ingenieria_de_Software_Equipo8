@@ -447,6 +447,7 @@ public class RegisterIU extends javax.swing.JFrame {
         String clave2 = inputClave2.getText();
         escribir_leer data1= new escribir_leer();
         data1.escribir(correo, nombre, cedula, RIF, clave);
+        javax.swing.JOptionPane.showMessageDialog(this, "Usuario Registrado");
         LoginIU log = new LoginIU();
         log.setLocationRelativeTo(null);
         log.setVisible(true);
