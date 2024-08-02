@@ -16,21 +16,22 @@ public class UsuarioView extends javax.swing.JFrame {
         mainPanelLeft2 = new javax.swing.JPanel();
         mainPanelLeft3 = new javax.swing.JPanel();
         mainPanelRight = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         mainPanelLeft1 = new javax.swing.JPanel();
-        jTextField3 = new javax.swing.JTextField();
+        mainPanelLeft6 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         mainPanelLeft4 = new javax.swing.JPanel();
-        jTextField4 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         mainPanelLeft5 = new javax.swing.JPanel();
-        jTextField5 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         mainBar = new javax.swing.JPanel();
         buttonCerrar = new javax.swing.JPanel();
         buttonCerrarText = new javax.swing.JLabel();
@@ -117,19 +118,6 @@ public class UsuarioView extends javax.swing.JFrame {
         mainPanelRight.setBackground(new java.awt.Color(216, 197, 234));
         mainPanelRight.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setBackground(new java.awt.Color(216, 197, 234));
-        jTextField1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(119, 69, 168));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Estado");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        mainPanelRight.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 38, -1, -1));
-
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -192,52 +180,53 @@ public class UsuarioView extends javax.swing.JFrame {
 
         mainPanelLeft1.setBackground(new java.awt.Color(119, 69, 168));
 
-        jTextField3.setBackground(new java.awt.Color(119, 69, 168));
-        jTextField3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField3.setText("Curso 1");
-        jTextField3.setAutoscrolls(false);
-        jTextField3.setBorder(null);
-        jTextField3.setOpaque(true);
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
+        mainPanelLeft6.setBackground(new java.awt.Color(119, 69, 168));
+
+        jLabel7.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Curso 1");
+
+        javax.swing.GroupLayout mainPanelLeft6Layout = new javax.swing.GroupLayout(mainPanelLeft6);
+        mainPanelLeft6.setLayout(mainPanelLeft6Layout);
+        mainPanelLeft6Layout.setHorizontalGroup(
+            mainPanelLeft6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLeft6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(186, Short.MAX_VALUE))
+        );
+        mainPanelLeft6Layout.setVerticalGroup(
+            mainPanelLeft6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLeft6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addContainerGap(58, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout mainPanelLeft1Layout = new javax.swing.GroupLayout(mainPanelLeft1);
         mainPanelLeft1.setLayout(mainPanelLeft1Layout);
         mainPanelLeft1Layout.setHorizontalGroup(
             mainPanelLeft1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLeft1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(mainPanelLeft6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         mainPanelLeft1Layout.setVerticalGroup(
             mainPanelLeft1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLeft1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(mainPanelLeft6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         mainPanelRight.add(mainPanelLeft1, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 148, -1, -1));
 
         mainPanelLeft4.setBackground(new java.awt.Color(119, 69, 168));
 
-        jTextField4.setBackground(new java.awt.Color(119, 69, 168));
-        jTextField4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField4.setText("Curso 2");
-        jTextField4.setAutoscrolls(false);
-        jTextField4.setBorder(null);
-        jTextField4.setOpaque(true);
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
+        jLabel3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Curso 1");
 
         javax.swing.GroupLayout mainPanelLeft4Layout = new javax.swing.GroupLayout(mainPanelLeft4);
         mainPanelLeft4.setLayout(mainPanelLeft4Layout);
@@ -245,14 +234,14 @@ public class UsuarioView extends javax.swing.JFrame {
             mainPanelLeft4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLeft4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(186, Short.MAX_VALUE))
         );
         mainPanelLeft4Layout.setVerticalGroup(
             mainPanelLeft4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLeft4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel3)
                 .addContainerGap(59, Short.MAX_VALUE))
         );
 
@@ -260,18 +249,9 @@ public class UsuarioView extends javax.swing.JFrame {
 
         mainPanelLeft5.setBackground(new java.awt.Color(119, 69, 168));
 
-        jTextField5.setBackground(new java.awt.Color(119, 69, 168));
-        jTextField5.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField5.setText("Curso 3");
-        jTextField5.setAutoscrolls(false);
-        jTextField5.setBorder(null);
-        jTextField5.setOpaque(true);
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
+        jLabel8.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Curso 1");
 
         javax.swing.GroupLayout mainPanelLeft5Layout = new javax.swing.GroupLayout(mainPanelLeft5);
         mainPanelLeft5.setLayout(mainPanelLeft5Layout);
@@ -279,14 +259,14 @@ public class UsuarioView extends javax.swing.JFrame {
             mainPanelLeft5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLeft5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(186, Short.MAX_VALUE))
         );
         mainPanelLeft5Layout.setVerticalGroup(
             mainPanelLeft5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLeft5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel8)
                 .addContainerGap(59, Short.MAX_VALUE))
         );
 
@@ -356,6 +336,11 @@ public class UsuarioView extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(119, 69, 168));
         jLabel2.setText("Cursos");
         mainPanelRight.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 180, -1));
+
+        jLabel12.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(119, 69, 168));
+        jLabel12.setText("Estado");
+        mainPanelRight.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, -1));
 
         backgroundPanel.add(mainPanelRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 450, 520));
 
@@ -554,10 +539,6 @@ public class UsuarioView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void jLabel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel10MouseEntered
@@ -573,18 +554,6 @@ public class UsuarioView extends javax.swing.JFrame {
     private void jLabel9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel9MouseExited
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void jLabel11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseEntered
         // TODO add your handling code here:
@@ -702,19 +671,19 @@ public class UsuarioView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JPanel mainBar;
     private javax.swing.JPanel mainPanelLeft;
     private javax.swing.JPanel mainPanelLeft1;
@@ -722,6 +691,7 @@ public class UsuarioView extends javax.swing.JFrame {
     private javax.swing.JPanel mainPanelLeft3;
     private javax.swing.JPanel mainPanelLeft4;
     private javax.swing.JPanel mainPanelLeft5;
+    private javax.swing.JPanel mainPanelLeft6;
     private javax.swing.JPanel mainPanelRight;
     // End of variables declaration//GEN-END:variables
 }
