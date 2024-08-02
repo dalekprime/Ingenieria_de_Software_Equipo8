@@ -111,7 +111,7 @@
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="X"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Cursor Por defecto"/>
+                      <Color id="Default Cursor"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -164,7 +164,7 @@
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Home"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Cursor Por defecto"/>
+                      <Color id="Default Cursor"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -364,6 +364,7 @@
                 <Property name="text" type="java.lang.String" value="Ingrese su correo electronico"/>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="inputCorreoMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputCorreoActionPerformed"/>
               </Events>
             </Component>
@@ -377,6 +378,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ingrese su nombre completo"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="inputNombreMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="inputCedula">
               <Properties>
@@ -388,6 +392,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ingrese su cedula de identidad"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="inputCedulaMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="inputRIF">
               <Properties>
@@ -399,6 +406,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ingrese su RIF"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="inputRIFMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="inputClave">
               <Properties>
@@ -410,6 +420,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ingrese una clave"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="inputClaveMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="inputClave2">
               <Properties>
@@ -421,6 +434,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Confirme su clave"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="inputClave2MouseClicked"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JPanel" name="buttonEnviar">
               <Properties>
@@ -463,7 +479,7 @@
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Enviar"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Cursor Por defecto"/>
+                      <Color id="Default Cursor"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -512,7 +528,7 @@
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Cursor Por defecto"/>
+                      <Color id="Default Cursor"/>
                     </Property>
                   </Properties>
                   <Events>

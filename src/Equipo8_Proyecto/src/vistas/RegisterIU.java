@@ -165,6 +165,11 @@ public class RegisterIU extends javax.swing.JFrame {
         inputCorreo.setBackground(new java.awt.Color(216, 197, 234));
         inputCorreo.setForeground(new java.awt.Color(102, 102, 102));
         inputCorreo.setText("Ingrese su correo electronico");
+        inputCorreo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inputCorreoMouseClicked(evt);
+            }
+        });
         inputCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputCorreoActionPerformed(evt);
@@ -174,22 +179,47 @@ public class RegisterIU extends javax.swing.JFrame {
         inputNombre.setBackground(new java.awt.Color(216, 197, 234));
         inputNombre.setForeground(new java.awt.Color(102, 102, 102));
         inputNombre.setText("Ingrese su nombre completo");
+        inputNombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inputNombreMouseClicked(evt);
+            }
+        });
 
         inputCedula.setBackground(new java.awt.Color(216, 197, 234));
         inputCedula.setForeground(new java.awt.Color(102, 102, 102));
         inputCedula.setText("Ingrese su cedula de identidad");
+        inputCedula.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inputCedulaMouseClicked(evt);
+            }
+        });
 
         inputRIF.setBackground(new java.awt.Color(216, 197, 234));
         inputRIF.setForeground(new java.awt.Color(102, 102, 102));
         inputRIF.setText("Ingrese su RIF");
+        inputRIF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inputRIFMouseClicked(evt);
+            }
+        });
 
         inputClave.setBackground(new java.awt.Color(216, 197, 234));
         inputClave.setForeground(new java.awt.Color(102, 102, 102));
         inputClave.setText("Ingrese una clave");
+        inputClave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inputClaveMouseClicked(evt);
+            }
+        });
 
         inputClave2.setBackground(new java.awt.Color(216, 197, 234));
         inputClave2.setForeground(new java.awt.Color(102, 102, 102));
         inputClave2.setText("Confirme su clave");
+        inputClave2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inputClave2MouseClicked(evt);
+            }
+        });
 
         buttonEnviar.setBackground(new java.awt.Color(93, 54, 132));
         buttonEnviar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
@@ -417,7 +447,47 @@ public class RegisterIU extends javax.swing.JFrame {
         String clave2 = inputClave2.getText();
         escribir_leer data1= new escribir_leer();
         data1.escribir(correo, nombre, cedula, RIF, clave);
+        LoginIU log = new LoginIU();
+        log.setLocationRelativeTo(null);
+        log.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void inputCorreoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputCorreoMouseClicked
+        if(inputCorreo.getText().contains("Ingrese su correo electronico")){
+            inputCorreo.setText("");
+        }
+    }//GEN-LAST:event_inputCorreoMouseClicked
+
+    private void inputNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputNombreMouseClicked
+        if(inputNombre.getText().contains("Ingrese su nombre completo")){
+            inputNombre.setText("");
+        }
+    }//GEN-LAST:event_inputNombreMouseClicked
+
+    private void inputCedulaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputCedulaMouseClicked
+        if(inputCedula.getText().contains("Ingrese su cedula de identidad")){
+            inputCedula.setText("");
+        }
+    }//GEN-LAST:event_inputCedulaMouseClicked
+
+    private void inputRIFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputRIFMouseClicked
+        if(inputRIF.getText().contains("Ingrese su RIF")){
+            inputRIF.setText("");
+        }
+    }//GEN-LAST:event_inputRIFMouseClicked
+
+    private void inputClaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputClaveMouseClicked
+        if(inputClave.getText().contains("Ingrese una clave")){
+            inputClave.setText("");
+        }
+    }//GEN-LAST:event_inputClaveMouseClicked
+
+    private void inputClave2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputClave2MouseClicked
+        if(inputClave2.getText().contains("Confirme su clave")){
+            inputClave2.setText("");
+        }
+    }//GEN-LAST:event_inputClave2MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CC_Icon;
