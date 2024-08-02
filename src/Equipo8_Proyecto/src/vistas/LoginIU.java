@@ -6,6 +6,7 @@ package vistas;
 import controladores.escribir_leer;
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 
 public class LoginIU extends javax.swing.JFrame {
     int xMouse, yMouse;
@@ -407,6 +408,8 @@ public class LoginIU extends javax.swing.JFrame {
                 userView.setVisible(true);
                 this.setVisible(false);
             }
+        }else{
+            javax.swing.JOptionPane.showMessageDialog(this, "Datos Incorrectos");
         }
         
         
