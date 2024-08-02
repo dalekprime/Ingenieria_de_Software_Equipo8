@@ -6,7 +6,8 @@ import java.io.*;
 public class escribir_leer {
     
     public void escribir(String correo, String nombre, String cedula, String RIF, String clave){
-        String currentDir = System.getProperty("user.dir");
+        String currentDir =  System.getProperty("user.dir") + "/src/modelos";
+        //System.out.print(currentDir);
         String fileName = "datos.txt";
 
         File archivo = new File(currentDir, fileName);
