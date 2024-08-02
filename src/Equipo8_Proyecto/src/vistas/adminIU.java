@@ -41,20 +41,15 @@ public class AdminIU extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         mainBar = new javax.swing.JPanel();
         buttonCerrar = new javax.swing.JPanel();
         buttonCerrarText = new javax.swing.JLabel();
         buttonHome = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        buttonDatos = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         buttonSalir = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         buttonPerfil = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        buttonNotificaciones = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
         CC_Icon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -417,21 +412,6 @@ public class AdminIU extends javax.swing.JFrame {
 
         backgroundPanel.add(mainPanelRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 560, 440));
 
-        jPanel1.setBackground(new java.awt.Color(42, 40, 44));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 780, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
-        );
-
-        backgroundPanel.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 780, 70));
-
         mainBar.setBackground(new java.awt.Color(42, 40, 44));
         mainBar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -506,35 +486,6 @@ public class AdminIU extends javax.swing.JFrame {
 
         mainBar.add(buttonHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 80, 40));
 
-        buttonDatos.setBackground(new java.awt.Color(93, 54, 132));
-        buttonDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonDatos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonDatosMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonDatosMouseExited(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Datos");
-
-        javax.swing.GroupLayout buttonDatosLayout = new javax.swing.GroupLayout(buttonDatos);
-        buttonDatos.setLayout(buttonDatosLayout);
-        buttonDatosLayout.setHorizontalGroup(
-            buttonDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        buttonDatosLayout.setVerticalGroup(
-            buttonDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        mainBar.add(buttonDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 50, 40));
-
         buttonSalir.setBackground(new java.awt.Color(93, 54, 132));
         buttonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -596,35 +547,6 @@ public class AdminIU extends javax.swing.JFrame {
 
         mainBar.add(buttonPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, 50, 40));
 
-        buttonNotificaciones.setBackground(new java.awt.Color(93, 54, 132));
-        buttonNotificaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonNotificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonNotificacionesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonNotificacionesMouseExited(evt);
-            }
-        });
-
-        jLabel7.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Notis");
-
-        javax.swing.GroupLayout buttonNotificacionesLayout = new javax.swing.GroupLayout(buttonNotificaciones);
-        buttonNotificaciones.setLayout(buttonNotificacionesLayout);
-        buttonNotificacionesLayout.setHorizontalGroup(
-            buttonNotificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        buttonNotificacionesLayout.setVerticalGroup(
-            buttonNotificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        mainBar.add(buttonNotificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 50, 40));
-
         CC_Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/src/CCUCV_LOGOTiny.png"))); // NOI18N
         CC_Icon.setText("jLabel8");
         mainBar.add(CC_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 10, 40, 40));
@@ -669,14 +591,6 @@ public class AdminIU extends javax.swing.JFrame {
         buttonHome.setBorder(javax.swing.BorderFactory.createEmptyBorder());
     }//GEN-LAST:event_jLabel6MouseExited
 
-    private void buttonDatosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDatosMouseEntered
-        buttonDatos.setBorder(BorderFactory.createLineBorder(Color.white));
-    }//GEN-LAST:event_buttonDatosMouseEntered
-
-    private void buttonDatosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDatosMouseExited
-        buttonDatos.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-    }//GEN-LAST:event_buttonDatosMouseExited
-
     private void buttonSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalirMouseEntered
         buttonSalir.setBorder(BorderFactory.createLineBorder(Color.white));
     }//GEN-LAST:event_buttonSalirMouseEntered
@@ -692,14 +606,6 @@ public class AdminIU extends javax.swing.JFrame {
     private void buttonPerfilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonPerfilMouseExited
         buttonPerfil.setBorder(javax.swing.BorderFactory.createEmptyBorder());
     }//GEN-LAST:event_buttonPerfilMouseExited
-
-    private void buttonNotificacionesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNotificacionesMouseEntered
-        buttonNotificaciones.setBorder(BorderFactory.createLineBorder(Color.white));
-    }//GEN-LAST:event_buttonNotificacionesMouseEntered
-
-    private void buttonNotificacionesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNotificacionesMouseExited
-        buttonNotificaciones.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-    }//GEN-LAST:event_buttonNotificacionesMouseExited
 
     private void mainBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mainBarMouseDragged
         this.setLocation((evt.getXOnScreen() - xMouse), (evt.getYOnScreen() -  yMouse));
@@ -723,9 +629,7 @@ public class AdminIU extends javax.swing.JFrame {
     private javax.swing.JPanel backgroundPanel;
     private javax.swing.JPanel buttonCerrar;
     private javax.swing.JLabel buttonCerrarText;
-    private javax.swing.JPanel buttonDatos;
     private javax.swing.JPanel buttonHome;
-    private javax.swing.JPanel buttonNotificaciones;
     private javax.swing.JPanel buttonPerfil;
     private javax.swing.JPanel buttonSalir;
     private javax.swing.JLabel jLabel10;
@@ -738,17 +642,14 @@ public class AdminIU extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;

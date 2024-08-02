@@ -64,18 +64,8 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
         buttonCerrarText = new javax.swing.JLabel();
         buttonHome = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        buttonCursos = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        buttonDatos = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        buttonInfo = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         buttonSalir = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        buttonPerfil = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        buttonNotificaciones = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
         CC_Icon = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
 
@@ -608,9 +598,6 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
                             .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelRightLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(mainPanelRightLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)))
@@ -622,7 +609,9 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
             .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
             .addGroup(mainPanelRightLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(mainPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         mainPanelRightLayout.setVerticalGroup(
@@ -745,94 +734,6 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
 
         mainBar.add(buttonHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 80, 40));
 
-        buttonCursos.setBackground(new java.awt.Color(93, 54, 132));
-        buttonCursos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonCursos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonCursosMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonCursosMouseExited(evt);
-            }
-        });
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Cursos");
-
-        javax.swing.GroupLayout buttonCursosLayout = new javax.swing.GroupLayout(buttonCursos);
-        buttonCursos.setLayout(buttonCursosLayout);
-        buttonCursosLayout.setHorizontalGroup(
-            buttonCursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        buttonCursosLayout.setVerticalGroup(
-            buttonCursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        mainBar.add(buttonCursos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 50, 40));
-
-        buttonDatos.setBackground(new java.awt.Color(93, 54, 132));
-        buttonDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonDatos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonDatosMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonDatosMouseExited(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Datos");
-
-        javax.swing.GroupLayout buttonDatosLayout = new javax.swing.GroupLayout(buttonDatos);
-        buttonDatos.setLayout(buttonDatosLayout);
-        buttonDatosLayout.setHorizontalGroup(
-            buttonDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        buttonDatosLayout.setVerticalGroup(
-            buttonDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        mainBar.add(buttonDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 50, 40));
-
-        buttonInfo.setBackground(new java.awt.Color(93, 54, 132));
-        buttonInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonInfo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonInfoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonInfoMouseExited(evt);
-            }
-        });
-
-        jLabel3.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Info");
-
-        javax.swing.GroupLayout buttonInfoLayout = new javax.swing.GroupLayout(buttonInfo);
-        buttonInfo.setLayout(buttonInfoLayout);
-        buttonInfoLayout.setHorizontalGroup(
-            buttonInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        buttonInfoLayout.setVerticalGroup(
-            buttonInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        mainBar.add(buttonInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 50, 40));
-
         buttonSalir.setBackground(new java.awt.Color(93, 54, 132));
         buttonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -865,72 +766,14 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
 
         mainBar.add(buttonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 50, 40));
 
-        buttonPerfil.setBackground(new java.awt.Color(93, 54, 132));
-        buttonPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonPerfil.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonPerfilMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonPerfilMouseExited(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Perfil");
-
-        javax.swing.GroupLayout buttonPerfilLayout = new javax.swing.GroupLayout(buttonPerfil);
-        buttonPerfil.setLayout(buttonPerfilLayout);
-        buttonPerfilLayout.setHorizontalGroup(
-            buttonPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        buttonPerfilLayout.setVerticalGroup(
-            buttonPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        mainBar.add(buttonPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, 50, 40));
-
-        buttonNotificaciones.setBackground(new java.awt.Color(93, 54, 132));
-        buttonNotificaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonNotificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonNotificacionesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonNotificacionesMouseExited(evt);
-            }
-        });
-
-        jLabel7.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Notis");
-
-        javax.swing.GroupLayout buttonNotificacionesLayout = new javax.swing.GroupLayout(buttonNotificaciones);
-        buttonNotificaciones.setLayout(buttonNotificacionesLayout);
-        buttonNotificacionesLayout.setHorizontalGroup(
-            buttonNotificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        buttonNotificacionesLayout.setVerticalGroup(
-            buttonNotificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        mainBar.add(buttonNotificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 50, 40));
-
         CC_Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/src/CCUCV_LOGOTiny.png"))); // NOI18N
         CC_Icon.setText("jLabel8");
         mainBar.add(CC_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 10, 40, 40));
 
-        jLabel10.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Proponer Curso");
+        jLabel10.setText("Formulacion de Curso");
         jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -940,7 +783,7 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
                 jLabel10MouseExited(evt);
             }
         });
-        mainBar.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, 20));
+        mainBar.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, 20));
 
         backgroundPanel.add(mainBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 60));
 
@@ -977,14 +820,6 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
     private void jLabel9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel9MouseExited
-
-    private void jLabel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel10MouseEntered
-
-    private void jLabel10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel10MouseExited
 
     private void jLabel11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseEntered
         // TODO add your handling code here:
@@ -1170,30 +1005,6 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
         buttonHome.setBorder(javax.swing.BorderFactory.createEmptyBorder());
     }//GEN-LAST:event_jLabel6MouseExited
 
-    private void buttonCursosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonCursosMouseEntered
-        buttonCursos.setBorder(BorderFactory.createLineBorder(Color.white));
-    }//GEN-LAST:event_buttonCursosMouseEntered
-
-    private void buttonCursosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonCursosMouseExited
-        buttonCursos.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-    }//GEN-LAST:event_buttonCursosMouseExited
-
-    private void buttonDatosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDatosMouseEntered
-        buttonDatos.setBorder(BorderFactory.createLineBorder(Color.white));
-    }//GEN-LAST:event_buttonDatosMouseEntered
-
-    private void buttonDatosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDatosMouseExited
-        buttonDatos.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-    }//GEN-LAST:event_buttonDatosMouseExited
-
-    private void buttonInfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonInfoMouseEntered
-        buttonInfo.setBorder(BorderFactory.createLineBorder(Color.white));
-    }//GEN-LAST:event_buttonInfoMouseEntered
-
-    private void buttonInfoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonInfoMouseExited
-        buttonInfo.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-    }//GEN-LAST:event_buttonInfoMouseExited
-
     private void buttonSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalirMouseEntered
         buttonSalir.setBorder(BorderFactory.createLineBorder(Color.white));
     }//GEN-LAST:event_buttonSalirMouseEntered
@@ -1201,22 +1012,6 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
     private void buttonSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalirMouseExited
         buttonSalir.setBorder(javax.swing.BorderFactory.createEmptyBorder());
     }//GEN-LAST:event_buttonSalirMouseExited
-
-    private void buttonPerfilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonPerfilMouseEntered
-        buttonPerfil.setBorder(BorderFactory.createLineBorder(Color.white));
-    }//GEN-LAST:event_buttonPerfilMouseEntered
-
-    private void buttonPerfilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonPerfilMouseExited
-        buttonPerfil.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-    }//GEN-LAST:event_buttonPerfilMouseExited
-
-    private void buttonNotificacionesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNotificacionesMouseEntered
-        buttonNotificaciones.setBorder(BorderFactory.createLineBorder(Color.white));
-    }//GEN-LAST:event_buttonNotificacionesMouseEntered
-
-    private void buttonNotificacionesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNotificacionesMouseExited
-        buttonNotificaciones.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-    }//GEN-LAST:event_buttonNotificacionesMouseExited
 
     private void mainBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mainBarMouseDragged
         this.setLocation((evt.getXOnScreen() - xMouse), (evt.getYOnScreen() -  yMouse));
@@ -1246,6 +1041,14 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
        this.setVisible(false);
     }//GEN-LAST:event_buttonSalirMouseClicked
 
+    private void jLabel10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel10MouseExited
+
+    private void jLabel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel10MouseEntered
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CC_Icon;
@@ -1256,14 +1059,8 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
     private javax.swing.JPanel backgroundPanel;
     private javax.swing.JPanel buttonCerrar;
     private javax.swing.JLabel buttonCerrarText;
-    private javax.swing.JPanel buttonCursos;
-    private javax.swing.JPanel buttonDatos;
     private javax.swing.JPanel buttonHome;
-    private javax.swing.JPanel buttonInfo;
-    private javax.swing.JPanel buttonNotificaciones;
-    private javax.swing.JPanel buttonPerfil;
     private javax.swing.JPanel buttonSalir;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1274,16 +1071,12 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JRadioButton jRadioButton1;

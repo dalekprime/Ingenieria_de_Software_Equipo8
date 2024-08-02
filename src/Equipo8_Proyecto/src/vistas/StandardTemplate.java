@@ -27,8 +27,6 @@ public class StandardTemplate extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         buttonPerfil = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        buttonNotificaciones = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
         CC_Icon = new javax.swing.JLabel();
         mainPanelLeft = new javax.swing.JPanel();
         mainPanelRight = new javax.swing.JPanel();
@@ -262,35 +260,6 @@ public class StandardTemplate extends javax.swing.JFrame {
 
         mainBar.add(buttonPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, 50, 40));
 
-        buttonNotificaciones.setBackground(new java.awt.Color(93, 54, 132));
-        buttonNotificaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonNotificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonNotificacionesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonNotificacionesMouseExited(evt);
-            }
-        });
-
-        jLabel7.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Notis");
-
-        javax.swing.GroupLayout buttonNotificacionesLayout = new javax.swing.GroupLayout(buttonNotificaciones);
-        buttonNotificaciones.setLayout(buttonNotificacionesLayout);
-        buttonNotificacionesLayout.setHorizontalGroup(
-            buttonNotificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        buttonNotificacionesLayout.setVerticalGroup(
-            buttonNotificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        mainBar.add(buttonNotificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 50, 40));
-
         CC_Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/src/CCUCV_LOGOTiny.png"))); // NOI18N
         CC_Icon.setText("jLabel8");
         mainBar.add(CC_Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 10, 40, 40));
@@ -386,10 +355,6 @@ public class StandardTemplate extends javax.swing.JFrame {
         buttonInfo.setBorder(BorderFactory.createLineBorder(Color.white));
     }//GEN-LAST:event_buttonInfoMouseEntered
 
-    private void buttonNotificacionesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNotificacionesMouseEntered
-        buttonNotificaciones.setBorder(BorderFactory.createLineBorder(Color.white));
-    }//GEN-LAST:event_buttonNotificacionesMouseEntered
-
     private void buttonPerfilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonPerfilMouseEntered
         buttonPerfil.setBorder(BorderFactory.createLineBorder(Color.white));
     }//GEN-LAST:event_buttonPerfilMouseEntered
@@ -410,10 +375,6 @@ public class StandardTemplate extends javax.swing.JFrame {
         buttonInfo.setBorder(javax.swing.BorderFactory.createEmptyBorder());
     }//GEN-LAST:event_buttonInfoMouseExited
 
-    private void buttonNotificacionesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNotificacionesMouseExited
-        buttonNotificaciones.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-    }//GEN-LAST:event_buttonNotificacionesMouseExited
-
     private void buttonPerfilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonPerfilMouseExited
         buttonPerfil.setBorder(javax.swing.BorderFactory.createEmptyBorder());
     }//GEN-LAST:event_buttonPerfilMouseExited
@@ -432,7 +393,6 @@ public class StandardTemplate extends javax.swing.JFrame {
     private javax.swing.JPanel buttonDatos;
     private javax.swing.JPanel buttonHome;
     private javax.swing.JPanel buttonInfo;
-    private javax.swing.JPanel buttonNotificaciones;
     private javax.swing.JPanel buttonPerfil;
     private javax.swing.JPanel buttonSalir;
     private javax.swing.JLabel jLabel1;
@@ -441,7 +401,6 @@ public class StandardTemplate extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel mainBar;
     private javax.swing.JPanel mainPanelLeft;
     private javax.swing.JPanel mainPanelRight;

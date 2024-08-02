@@ -21,7 +21,6 @@ public class UsuarioView extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jTextField2 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         mainPanelLeft1 = new javax.swing.JPanel();
         jTextField3 = new javax.swing.JTextField();
@@ -29,6 +28,7 @@ public class UsuarioView extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         mainPanelLeft5 = new javax.swing.JPanel();
         jTextField5 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         mainBar = new javax.swing.JPanel();
@@ -38,16 +38,10 @@ public class UsuarioView extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         buttonCursos = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        buttonDatos = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        buttonInfo = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         buttonSalir = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         buttonPerfil = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        buttonNotificaciones = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
         CC_Icon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -194,23 +188,6 @@ public class UsuarioView extends javax.swing.JFrame {
         });
         mainPanelRight.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 19, 171, 50));
 
-        jLabel10.setBackground(new java.awt.Color(119, 69, 168));
-        jLabel10.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Aceptado");
-        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel10.setOpaque(true);
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel10MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel10MouseExited(evt);
-            }
-        });
-        mainPanelRight.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 275, 65, 41));
-
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -328,6 +305,26 @@ public class UsuarioView extends javax.swing.JFrame {
 
         mainPanelRight.add(mainPanelLeft5, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 372, 261, -1));
 
+        jLabel10.setBackground(new java.awt.Color(119, 69, 168));
+        jLabel10.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Aceptado");
+        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel10.setOpaque(true);
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel10MouseExited(evt);
+            }
+        });
+        mainPanelRight.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 275, 65, 41));
+
         jLabel9.setBackground(new java.awt.Color(119, 69, 168));
         jLabel9.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -336,6 +333,9 @@ public class UsuarioView extends javax.swing.JFrame {
         jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel9.setOpaque(true);
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel9MouseEntered(evt);
             }
@@ -353,6 +353,9 @@ public class UsuarioView extends javax.swing.JFrame {
         jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel11.setOpaque(true);
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel11MouseEntered(evt);
             }
@@ -471,64 +474,6 @@ public class UsuarioView extends javax.swing.JFrame {
 
         mainBar.add(buttonCursos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 50, 40));
 
-        buttonDatos.setBackground(new java.awt.Color(93, 54, 132));
-        buttonDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonDatos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonDatosMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonDatosMouseExited(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Datos");
-
-        javax.swing.GroupLayout buttonDatosLayout = new javax.swing.GroupLayout(buttonDatos);
-        buttonDatos.setLayout(buttonDatosLayout);
-        buttonDatosLayout.setHorizontalGroup(
-            buttonDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        buttonDatosLayout.setVerticalGroup(
-            buttonDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        mainBar.add(buttonDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 50, 40));
-
-        buttonInfo.setBackground(new java.awt.Color(93, 54, 132));
-        buttonInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonInfo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonInfoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonInfoMouseExited(evt);
-            }
-        });
-
-        jLabel3.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Info");
-
-        javax.swing.GroupLayout buttonInfoLayout = new javax.swing.GroupLayout(buttonInfo);
-        buttonInfo.setLayout(buttonInfoLayout);
-        buttonInfoLayout.setHorizontalGroup(
-            buttonInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        buttonInfoLayout.setVerticalGroup(
-            buttonInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        mainBar.add(buttonInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 50, 40));
-
         buttonSalir.setBackground(new java.awt.Color(93, 54, 132));
         buttonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -592,35 +537,6 @@ public class UsuarioView extends javax.swing.JFrame {
         );
 
         mainBar.add(buttonPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, 50, 40));
-
-        buttonNotificaciones.setBackground(new java.awt.Color(93, 54, 132));
-        buttonNotificaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonNotificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonNotificacionesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonNotificacionesMouseExited(evt);
-            }
-        });
-
-        jLabel7.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Notis");
-
-        javax.swing.GroupLayout buttonNotificacionesLayout = new javax.swing.GroupLayout(buttonNotificaciones);
-        buttonNotificaciones.setLayout(buttonNotificacionesLayout);
-        buttonNotificacionesLayout.setHorizontalGroup(
-            buttonNotificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        buttonNotificacionesLayout.setVerticalGroup(
-            buttonNotificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        mainBar.add(buttonNotificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 50, 40));
 
         CC_Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/src/CCUCV_LOGOTiny.png"))); // NOI18N
         CC_Icon.setText("jLabel8");
@@ -718,22 +634,6 @@ public class UsuarioView extends javax.swing.JFrame {
         buttonCursos.setBorder(javax.swing.BorderFactory.createEmptyBorder());
     }//GEN-LAST:event_buttonCursosMouseExited
 
-    private void buttonDatosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDatosMouseEntered
-        buttonDatos.setBorder(BorderFactory.createLineBorder(Color.white));
-    }//GEN-LAST:event_buttonDatosMouseEntered
-
-    private void buttonDatosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDatosMouseExited
-        buttonDatos.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-    }//GEN-LAST:event_buttonDatosMouseExited
-
-    private void buttonInfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonInfoMouseEntered
-        buttonInfo.setBorder(BorderFactory.createLineBorder(Color.white));
-    }//GEN-LAST:event_buttonInfoMouseEntered
-
-    private void buttonInfoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonInfoMouseExited
-        buttonInfo.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-    }//GEN-LAST:event_buttonInfoMouseExited
-
     private void buttonSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalirMouseEntered
         buttonSalir.setBorder(BorderFactory.createLineBorder(Color.white));
     }//GEN-LAST:event_buttonSalirMouseEntered
@@ -749,14 +649,6 @@ public class UsuarioView extends javax.swing.JFrame {
     private void buttonPerfilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonPerfilMouseExited
         buttonPerfil.setBorder(javax.swing.BorderFactory.createEmptyBorder());
     }//GEN-LAST:event_buttonPerfilMouseExited
-
-    private void buttonNotificacionesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNotificacionesMouseEntered
-        buttonNotificaciones.setBorder(BorderFactory.createLineBorder(Color.white));
-    }//GEN-LAST:event_buttonNotificacionesMouseEntered
-
-    private void buttonNotificacionesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNotificacionesMouseExited
-        buttonNotificaciones.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-    }//GEN-LAST:event_buttonNotificacionesMouseExited
 
     private void mainBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mainBarMouseDragged
         this.setLocation((evt.getXOnScreen() - xMouse), (evt.getYOnScreen() -  yMouse));
@@ -788,6 +680,27 @@ public class UsuarioView extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_buttonPerfilMouseClicked
 
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        FormularioDeCursoIU formoC = new FormularioDeCursoIU();
+        formoC.setLocationRelativeTo(null);
+        formoC.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        FormularioDeCursoIU formoC = new FormularioDeCursoIU();
+        formoC.setLocationRelativeTo(null);
+        formoC.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+       FormularioDeCursoIU formoC = new FormularioDeCursoIU();
+       formoC.setLocationRelativeTo(null);
+       formoC.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_jLabel11MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CC_Icon;
@@ -795,21 +708,15 @@ public class UsuarioView extends javax.swing.JFrame {
     private javax.swing.JPanel buttonCerrar;
     private javax.swing.JLabel buttonCerrarText;
     private javax.swing.JPanel buttonCursos;
-    private javax.swing.JPanel buttonDatos;
     private javax.swing.JPanel buttonHome;
-    private javax.swing.JPanel buttonInfo;
-    private javax.swing.JPanel buttonNotificaciones;
     private javax.swing.JPanel buttonPerfil;
     private javax.swing.JPanel buttonSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
