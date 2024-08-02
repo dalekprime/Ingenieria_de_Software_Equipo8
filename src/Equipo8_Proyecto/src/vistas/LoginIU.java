@@ -397,7 +397,10 @@ public class LoginIU extends javax.swing.JFrame {
             adminView.setVisible(true);
             this.setVisible(false);
         }else{
-        
+            UsuarioView userView = new UsuarioView();
+            userView.setLocationRelativeTo(null);
+            userView.setVisible(true);
+            this.setVisible(false);
         }
     }//GEN-LAST:event_jLabel1MouseClicked
 
