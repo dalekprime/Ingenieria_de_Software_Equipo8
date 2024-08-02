@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vistas;
-
+import controladores.escribir_leer;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 
@@ -391,17 +391,25 @@ public class LoginIU extends javax.swing.JFrame {
     }//GEN-LAST:event_inputClaveMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        if(admin){
-            AdminIU adminView = new AdminIU();
-            adminView.setLocationRelativeTo(null);
-            adminView.setVisible(true);
-            this.setVisible(false);
-        }else{
-            UsuarioView userView = new UsuarioView();
-            userView.setLocationRelativeTo(null);
-            userView.setVisible(true);
-            this.setVisible(false);
+        String correo = inputCorreo.getText();
+        String clave = inputClave.getText();
+        escribir_leer data1= new escribir_leer();
+        boolean ingreso = data1.Buscar(correo, clave);
+        if(ingreso){
+            if(admin){
+                AdminIU adminView = new AdminIU();
+                adminView.setLocationRelativeTo(null);
+                adminView.setVisible(true);
+                this.setVisible(false);
+            }else{
+                UsuarioView userView = new UsuarioView();
+                userView.setLocationRelativeTo(null);
+                userView.setVisible(true);
+                this.setVisible(false);
+            }
         }
+        
+        
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
