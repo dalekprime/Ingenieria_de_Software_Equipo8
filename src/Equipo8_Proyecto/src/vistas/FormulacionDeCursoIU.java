@@ -379,6 +379,9 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
         jLabel13.setText("Enviar Curso");
         jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel13MouseEntered(evt);
             }
@@ -720,11 +723,11 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton15ActionPerformed
 
     private void jLabel13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseEntered
-        // TODO add your handling code here:
+        jLabel13.setForeground(Color.white);
     }//GEN-LAST:event_jLabel13MouseEntered
 
     private void jLabel13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseExited
-        // TODO add your handling code here:
+        jLabel13.setForeground(new java.awt.Color(42, 40, 44));
     }//GEN-LAST:event_jLabel13MouseExited
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -802,6 +805,10 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
     private void jLabel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel10MouseEntered
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+       javax.swing.JOptionPane.showMessageDialog(this, "Proyecto Registrado. \n Espere a que sea revisado y evaluado.");
+    }//GEN-LAST:event_jLabel13MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
