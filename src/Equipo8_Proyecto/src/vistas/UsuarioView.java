@@ -20,7 +20,6 @@ public class UsuarioView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         mainPanelLeft1 = new javax.swing.JPanel();
         jTextField3 = new javax.swing.JTextField();
@@ -31,6 +30,7 @@ public class UsuarioView extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         mainBar = new javax.swing.JPanel();
         buttonCerrar = new javax.swing.JPanel();
         buttonCerrarText = new javax.swing.JLabel();
@@ -174,19 +174,6 @@ public class UsuarioView extends javax.swing.JFrame {
         );
 
         mainPanelRight.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 0, -1, -1));
-
-        jTextField2.setBackground(new java.awt.Color(216, 197, 234));
-        jTextField2.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(119, 69, 168));
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setText("Cursos");
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        mainPanelRight.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 19, 171, 50));
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -364,6 +351,11 @@ public class UsuarioView extends javax.swing.JFrame {
             }
         });
         mainPanelRight.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 389, 65, 41));
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(119, 69, 168));
+        jLabel2.setText("Cursos");
+        mainPanelRight.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 180, -1));
 
         backgroundPanel.add(mainPanelRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 450, 520));
 
@@ -566,10 +558,6 @@ public class UsuarioView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
     private void jLabel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel10MouseEntered
@@ -714,6 +702,7 @@ public class UsuarioView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -723,7 +712,6 @@ public class UsuarioView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
