@@ -9,6 +9,7 @@ import javax.swing.BorderFactory;
 
 public class LoginIU extends javax.swing.JFrame {
     int xMouse, yMouse;
+    boolean admin = false;
     public LoginIU() {
         initComponents();
     }
@@ -34,6 +35,7 @@ public class LoginIU extends javax.swing.JFrame {
         buttonCancelar = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         textRegister = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -253,16 +255,27 @@ public class LoginIU extends javax.swing.JFrame {
             }
         });
 
+        jRadioButton1.setBackground(new java.awt.Color(119, 69, 168));
+        jRadioButton1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton1.setText("Administrador");
+        jRadioButton1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jRadioButton1StateChanged(evt);
+            }
+        });
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout bodyLayout = new javax.swing.GroupLayout(body);
         body.setLayout(bodyLayout);
         bodyLayout.setHorizontalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(inputClave, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(170, 170, 170))
             .addGroup(bodyLayout.createSequentialGroup()
                 .addGap(120, 120, 120)
                 .addComponent(buttonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -274,11 +287,20 @@ public class LoginIU extends javax.swing.JFrame {
                 .addComponent(inputCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(textRegister, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyLayout.createSequentialGroup()
+                        .addComponent(inputClave, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(170, 170, 170))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyLayout.createSequentialGroup()
+                        .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(147, 147, 147))))
         );
         bodyLayout.setVerticalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bodyLayout.createSequentialGroup()
-                .addGap(120, 120, 120)
+                .addGap(96, 96, 96)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(inputCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -286,11 +308,13 @@ public class LoginIU extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(inputClave, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
+                .addComponent(jRadioButton1)
+                .addGap(18, 18, 18)
                 .addGroup(bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buttonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(textRegister)
                 .addGap(77, 77, 77))
         );
@@ -367,7 +391,14 @@ public class LoginIU extends javax.swing.JFrame {
     }//GEN-LAST:event_inputClaveMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Correo: " + inputCorreo.getText() + "\nClave: " + String.valueOf(inputClave.getPassword()), "Login Info", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        if(admin){
+            AdminIU adminView = new AdminIU();
+            adminView.setLocationRelativeTo(null);
+            adminView.setVisible(true);
+            this.setVisible(false);
+        }else{
+        
+        }
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
@@ -413,6 +444,18 @@ public class LoginIU extends javax.swing.JFrame {
         textRegister.setForeground(Color.white);
     }//GEN-LAST:event_textRegisterMouseExited
 
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        if(!admin){
+            admin = true;
+        }else{
+            admin = false;
+        }
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jRadioButton1StateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1StateChanged
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CC_Icon;
     private javax.swing.JPanel backgroundPanel;
@@ -429,6 +472,7 @@ public class LoginIU extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JPanel mainBar;
     private javax.swing.JLabel textRegister;
     // End of variables declaration//GEN-END:variables
