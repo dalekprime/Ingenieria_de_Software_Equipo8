@@ -441,6 +441,9 @@ public class UsuarioView extends javax.swing.JFrame {
         buttonCursos.setBackground(new java.awt.Color(93, 54, 132));
         buttonCursos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonCursos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonCursosMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonCursosMouseEntered(evt);
             }
@@ -529,6 +532,9 @@ public class UsuarioView extends javax.swing.JFrame {
         buttonSalir.setBackground(new java.awt.Color(93, 54, 132));
         buttonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonSalirMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonSalirMouseEntered(evt);
             }
@@ -541,11 +547,6 @@ public class UsuarioView extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Salir");
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout buttonSalirLayout = new javax.swing.GroupLayout(buttonSalir);
         buttonSalir.setLayout(buttonSalirLayout);
@@ -763,9 +764,19 @@ public class UsuarioView extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_mainBarMousePressed
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel5MouseClicked
+    private void buttonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalirMouseClicked
+        LoginIU login = new LoginIU();
+        login.setLocationRelativeTo(null);
+        login.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_buttonSalirMouseClicked
+
+    private void buttonCursosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonCursosMouseClicked
+        FormulacionDeCursoIU formu = new FormulacionDeCursoIU();
+        formu.setLocationRelativeTo(null);
+        formu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_buttonCursosMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

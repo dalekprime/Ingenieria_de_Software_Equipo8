@@ -601,6 +601,9 @@ public class AdminIU extends javax.swing.JFrame {
         buttonSalir.setBackground(new java.awt.Color(93, 54, 132));
         buttonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonSalirMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonSalirMouseEntered(evt);
             }
@@ -785,6 +788,13 @@ public class AdminIU extends javax.swing.JFrame {
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_mainBarMousePressed
+
+    private void buttonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalirMouseClicked
+        LoginIU login = new LoginIU();
+        login.setLocationRelativeTo(null);
+        login.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_buttonSalirMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
