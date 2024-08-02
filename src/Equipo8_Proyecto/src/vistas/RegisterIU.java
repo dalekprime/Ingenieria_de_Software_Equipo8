@@ -192,6 +192,11 @@ public class RegisterIU extends javax.swing.JFrame {
 
         buttonEnviar.setBackground(new java.awt.Color(93, 54, 132));
         buttonEnviar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
+        buttonEnviar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonEnviarMouseClicked(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -394,6 +399,10 @@ public class RegisterIU extends javax.swing.JFrame {
         buttonEnviar.setBackground(new java.awt.Color(93, 54, 132));
         jLabel8.setForeground(Color.white);
     }//GEN-LAST:event_jLabel8MouseExited
+
+    private void buttonEnviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEnviarMouseClicked
+        // Codigo cosas
+    }//GEN-LAST:event_buttonEnviarMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CC_Icon;
