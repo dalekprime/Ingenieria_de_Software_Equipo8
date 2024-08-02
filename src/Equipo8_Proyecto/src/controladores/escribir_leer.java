@@ -6,7 +6,7 @@ import java.io.*;
 public class escribir_leer {
     
     public void escribir(String correo, String nombre, String cedula, String RIF, String clave){
-        String currentDir =  System.getProperty("user.dir") + "/src/modelos";
+        String currentDir =  System.getProperty("user.dir");
         //System.out.print(currentDir);
         String fileName = "datos.txt";
 
@@ -35,7 +35,7 @@ public class escribir_leer {
     }
 
     public void leer1(){        //Imprime por consola
-        String currentDir = System.getProperty("user.dir");
+        String currentDir =  System.getProperty("user.dir");
         String fileName = "datos.txt";
         File archivo = new File(currentDir, fileName);
         if(archivo.exists()) {
@@ -58,7 +58,7 @@ public class escribir_leer {
     }
 
     public void leer2(){        //Imprime por consola
-        String currentDir = System.getProperty("user.dir");
+        String currentDir =  System.getProperty("user.dir");
         String fileName = "datos.txt";
         File archivo = new File(currentDir, fileName);
         if(archivo.exists()) {
@@ -115,7 +115,7 @@ public class escribir_leer {
     }*/
     
     public boolean Buscar(String correo, String contrasena){
-        String currentDir = System.getProperty("user.dir");
+        String currentDir =  System.getProperty("user.dir");
         String fileName = "datos.txt";
         File archivo = new File(currentDir, fileName);
         if(archivo.exists()) {
