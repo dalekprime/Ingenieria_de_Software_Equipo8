@@ -2,9 +2,9 @@ package vistas;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 
-public class StandarTemplate extends javax.swing.JFrame {
+public class StandarTemplate2 extends javax.swing.JFrame {
     int xMouse, yMouse;
-    public StandarTemplate() {
+    public StandarTemplate2() {
         initComponents();
     }
     @SuppressWarnings("unchecked")
