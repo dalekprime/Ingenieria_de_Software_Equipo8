@@ -220,6 +220,9 @@ public class Usuario extends javax.swing.JFrame {
         buttonSalir.setBackground(new java.awt.Color(93, 54, 132));
         buttonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonSalirMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonSalirMouseEntered(evt);
             }
@@ -654,6 +657,13 @@ public class Usuario extends javax.swing.JFrame {
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void buttonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalirMouseClicked
+       UsuarioView userView = new UsuarioView();
+       userView.setLocationRelativeTo(null);
+       userView.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_buttonSalirMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

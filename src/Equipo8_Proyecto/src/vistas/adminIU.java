@@ -47,12 +47,8 @@ public class AdminIU extends javax.swing.JFrame {
         buttonCerrarText = new javax.swing.JLabel();
         buttonHome = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        buttonCursos = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         buttonDatos = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        buttonInfo = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         buttonSalir = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         buttonPerfil = new javax.swing.JPanel();
@@ -510,36 +506,6 @@ public class AdminIU extends javax.swing.JFrame {
 
         mainBar.add(buttonHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 80, 40));
 
-        buttonCursos.setBackground(new java.awt.Color(93, 54, 132));
-        buttonCursos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonCursos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonCursosMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonCursosMouseExited(evt);
-            }
-        });
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Cursos");
-
-        javax.swing.GroupLayout buttonCursosLayout = new javax.swing.GroupLayout(buttonCursos);
-        buttonCursos.setLayout(buttonCursosLayout);
-        buttonCursosLayout.setHorizontalGroup(
-            buttonCursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        buttonCursosLayout.setVerticalGroup(
-            buttonCursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        mainBar.add(buttonCursos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 50, 40));
-
         buttonDatos.setBackground(new java.awt.Color(93, 54, 132));
         buttonDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonDatos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -567,36 +533,7 @@ public class AdminIU extends javax.swing.JFrame {
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        mainBar.add(buttonDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 50, 40));
-
-        buttonInfo.setBackground(new java.awt.Color(93, 54, 132));
-        buttonInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonInfo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonInfoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonInfoMouseExited(evt);
-            }
-        });
-
-        jLabel3.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Info");
-
-        javax.swing.GroupLayout buttonInfoLayout = new javax.swing.GroupLayout(buttonInfo);
-        buttonInfo.setLayout(buttonInfoLayout);
-        buttonInfoLayout.setHorizontalGroup(
-            buttonInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-        buttonInfoLayout.setVerticalGroup(
-            buttonInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        mainBar.add(buttonInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 50, 40));
+        mainBar.add(buttonDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 50, 40));
 
         buttonSalir.setBackground(new java.awt.Color(93, 54, 132));
         buttonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -732,14 +669,6 @@ public class AdminIU extends javax.swing.JFrame {
         buttonHome.setBorder(javax.swing.BorderFactory.createEmptyBorder());
     }//GEN-LAST:event_jLabel6MouseExited
 
-    private void buttonCursosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonCursosMouseEntered
-        buttonCursos.setBorder(BorderFactory.createLineBorder(Color.white));
-    }//GEN-LAST:event_buttonCursosMouseEntered
-
-    private void buttonCursosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonCursosMouseExited
-        buttonCursos.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-    }//GEN-LAST:event_buttonCursosMouseExited
-
     private void buttonDatosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDatosMouseEntered
         buttonDatos.setBorder(BorderFactory.createLineBorder(Color.white));
     }//GEN-LAST:event_buttonDatosMouseEntered
@@ -747,14 +676,6 @@ public class AdminIU extends javax.swing.JFrame {
     private void buttonDatosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDatosMouseExited
         buttonDatos.setBorder(javax.swing.BorderFactory.createEmptyBorder());
     }//GEN-LAST:event_buttonDatosMouseExited
-
-    private void buttonInfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonInfoMouseEntered
-        buttonInfo.setBorder(BorderFactory.createLineBorder(Color.white));
-    }//GEN-LAST:event_buttonInfoMouseEntered
-
-    private void buttonInfoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonInfoMouseExited
-        buttonInfo.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-    }//GEN-LAST:event_buttonInfoMouseExited
 
     private void buttonSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalirMouseEntered
         buttonSalir.setBorder(BorderFactory.createLineBorder(Color.white));
@@ -802,14 +723,11 @@ public class AdminIU extends javax.swing.JFrame {
     private javax.swing.JPanel backgroundPanel;
     private javax.swing.JPanel buttonCerrar;
     private javax.swing.JLabel buttonCerrarText;
-    private javax.swing.JPanel buttonCursos;
     private javax.swing.JPanel buttonDatos;
     private javax.swing.JPanel buttonHome;
-    private javax.swing.JPanel buttonInfo;
     private javax.swing.JPanel buttonNotificaciones;
     private javax.swing.JPanel buttonPerfil;
     private javax.swing.JPanel buttonSalir;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -824,7 +742,6 @@ public class AdminIU extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

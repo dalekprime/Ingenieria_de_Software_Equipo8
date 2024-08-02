@@ -564,6 +564,9 @@ public class UsuarioView extends javax.swing.JFrame {
         buttonPerfil.setBackground(new java.awt.Color(93, 54, 132));
         buttonPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonPerfil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonPerfilMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonPerfilMouseEntered(evt);
             }
@@ -777,6 +780,13 @@ public class UsuarioView extends javax.swing.JFrame {
         formu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_buttonCursosMouseClicked
+
+    private void buttonPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonPerfilMouseClicked
+        Usuario userD = new Usuario();
+        userD.setLocationRelativeTo(null);
+        userD.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_buttonPerfilMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
