@@ -394,6 +394,7 @@ public class LoginIU extends javax.swing.JFrame {
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         String correo = inputCorreo.getText();
         String clave = inputClave.getText();
+       
         escribir_leer data1= new escribir_leer();
         boolean ingreso = data1.Buscar(correo, clave);
         if(ingreso){
