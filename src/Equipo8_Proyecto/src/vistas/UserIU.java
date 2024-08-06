@@ -1,12 +1,21 @@
 package vistas;
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import modelos.Usuario;
 
-public class Usuario extends javax.swing.JFrame {
+public class UserIU extends javax.swing.JFrame {
     int xMouse, yMouse;
-    public Usuario() {
+    Usuario actualUser;
+    public UserIU(Usuario actualUser) {
         initComponents();
+        this.actualUser = actualUser;
+        //System.out.println(actualUser.getNombre());
+        inputCedula.setText(actualUser.getCedula());
+        inputClave.setText(actualUser.getClave());
+        inputCorreo.setText(actualUser.getCorreo());
+        inputNombre.setText(actualUser.getNombre());
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -23,7 +32,7 @@ public class Usuario extends javax.swing.JFrame {
         mainPanelLeft = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        inputCedula = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         mainPanelRight = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
@@ -32,9 +41,9 @@ public class Usuario extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        inputNombre = new javax.swing.JTextField();
+        inputClave = new javax.swing.JTextField();
+        inputCorreo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -169,12 +178,12 @@ public class Usuario extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel10.setText("Cedula");
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(216, 197, 234));
-        jTextField1.setPreferredSize(new java.awt.Dimension(64, 25));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        inputCedula.setEditable(false);
+        inputCedula.setBackground(new java.awt.Color(216, 197, 234));
+        inputCedula.setPreferredSize(new java.awt.Dimension(64, 25));
+        inputCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                inputCedulaActionPerformed(evt);
             }
         });
 
@@ -194,7 +203,7 @@ public class Usuario extends javax.swing.JFrame {
             .addGroup(mainPanelLeftLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(mainPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputCedula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(mainPanelLeftLayout.createSequentialGroup()
                         .addGroup(mainPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,7 +218,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
                 .addGap(18, 18, 18)
@@ -281,30 +290,36 @@ public class Usuario extends javax.swing.JFrame {
             }
         });
 
-        jTextField3.setEditable(false);
-        jTextField3.setBackground(new java.awt.Color(119, 69, 168));
-        jTextField3.setPreferredSize(new java.awt.Dimension(64, 25));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        inputNombre.setEditable(false);
+        inputNombre.setBackground(new java.awt.Color(119, 69, 168));
+        inputNombre.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        inputNombre.setForeground(new java.awt.Color(255, 255, 255));
+        inputNombre.setPreferredSize(new java.awt.Dimension(64, 25));
+        inputNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                inputNombreActionPerformed(evt);
             }
         });
 
-        jTextField4.setEditable(false);
-        jTextField4.setBackground(new java.awt.Color(119, 69, 168));
-        jTextField4.setPreferredSize(new java.awt.Dimension(64, 25));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        inputClave.setEditable(false);
+        inputClave.setBackground(new java.awt.Color(119, 69, 168));
+        inputClave.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        inputClave.setForeground(new java.awt.Color(255, 255, 255));
+        inputClave.setPreferredSize(new java.awt.Dimension(64, 25));
+        inputClave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                inputClaveActionPerformed(evt);
             }
         });
 
-        jTextField5.setEditable(false);
-        jTextField5.setBackground(new java.awt.Color(119, 69, 168));
-        jTextField5.setPreferredSize(new java.awt.Dimension(64, 25));
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        inputCorreo.setEditable(false);
+        inputCorreo.setBackground(new java.awt.Color(119, 69, 168));
+        inputCorreo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        inputCorreo.setForeground(new java.awt.Color(255, 255, 255));
+        inputCorreo.setPreferredSize(new java.awt.Dimension(64, 25));
+        inputCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                inputCorreoActionPerformed(evt);
             }
         });
 
@@ -317,8 +332,8 @@ public class Usuario extends javax.swing.JFrame {
                 .addGroup(mainPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelRightLayout.createSequentialGroup()
                         .addGroup(mainPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(inputNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(mainPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mainPanelRightLayout.createSequentialGroup()
@@ -326,7 +341,7 @@ public class Usuario extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(mainPanelRightLayout.createSequentialGroup()
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(inputClave, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(mainPanelRightLayout.createSequentialGroup()
@@ -345,20 +360,20 @@ public class Usuario extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addGroup(mainPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(mainPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17)
                 .addGroup(mainPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(276, Short.MAX_VALUE))
+                    .addComponent(inputClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(281, Short.MAX_VALUE))
         );
 
         backgroundPanel.add(mainPanelRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 450, 520));
@@ -442,28 +457,28 @@ public class Usuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel17MouseExited
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void inputCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCedulaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_inputCedulaActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void inputNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_inputNombreActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void inputClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputClaveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_inputClaveActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void inputCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_inputCorreoActionPerformed
 
     private void buttonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalirMouseClicked
-       UsuarioView userView = new UsuarioView();
+       UsuarioView userView = new UsuarioView(actualUser);
        userView.setLocationRelativeTo(null);
        userView.setVisible(true);
        this.setVisible(false);
@@ -477,6 +492,10 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JLabel buttonCerrarText;
     private javax.swing.JPanel buttonHome;
     private javax.swing.JPanel buttonSalir;
+    private javax.swing.JTextField inputCedula;
+    private javax.swing.JTextField inputClave;
+    private javax.swing.JTextField inputCorreo;
+    private javax.swing.JTextField inputNombre;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -487,11 +506,7 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JPanel mainBar;
     private javax.swing.JPanel mainPanelLeft;
     private javax.swing.JPanel mainPanelRight;

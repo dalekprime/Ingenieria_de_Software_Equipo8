@@ -1,11 +1,14 @@
 package vistas;
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import modelos.Usuario;
 
 public class FormularioDeCursoIU extends javax.swing.JFrame {
     int xMouse, yMouse;
-    public FormularioDeCursoIU() {
+    Usuario actualUser;
+    public FormularioDeCursoIU(Usuario actualUser) {
         initComponents();
+        this.actualUser = actualUser;
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -763,7 +766,7 @@ public class FormularioDeCursoIU extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel13MouseClicked
 
     private void buttonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalirMouseClicked
-       UsuarioView userView = new UsuarioView();
+       UsuarioView userView = new UsuarioView(actualUser);
        userView.setLocationRelativeTo(null);
        userView.setVisible(true);
        this.setVisible(false);

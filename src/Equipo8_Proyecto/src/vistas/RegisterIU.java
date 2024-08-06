@@ -1,5 +1,5 @@
 package vistas;
-import controladores.escribir_leer;
+import controladores.Register;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 
@@ -446,7 +446,7 @@ public class RegisterIU extends javax.swing.JFrame {
         String clave = inputClave.getText();
         String clave2 = inputClave2.getText();
         
-        escribir_leer data1= new escribir_leer();
+        Register data1 = new Register();
         data1.escribir(correo, nombre, cedula, RIF, clave);
         javax.swing.JOptionPane.showMessageDialog(this, "Usuario Registrado");
         

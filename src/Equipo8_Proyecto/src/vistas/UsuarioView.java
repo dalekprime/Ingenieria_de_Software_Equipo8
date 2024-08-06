@@ -1,11 +1,52 @@
 package vistas;
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import modelos.Usuario;
 
 public class UsuarioView extends javax.swing.JFrame {
     int xMouse, yMouse;
-    public UsuarioView() {
+    Usuario actualUser;
+    void start(){
+        int numCurso = actualUser.myCourses.size();
+        curso1Panel.setVisible(false);
+        curso2Panel.setVisible(false);
+        curso3Panel.setVisible(false);
+        curso1Valid.setVisible(false);
+        curso2Valid.setVisible(false);
+        curso3Valid.setVisible(false);
+        if(numCurso >= 1){
+            curso1Name.setText(actualUser.myCourses.get(0).getNombre());
+            cursoDesc1.setText(actualUser.myCourses.get(0).getDescripcion());
+            boolean actualValid1 = actualUser.myCourses.get(0).getValid();
+            String validName1 = actualValid1?"Aprobado":"Revision";
+            curso1Valid.setText(validName1);
+            curso1Panel.setVisible(true);
+            curso1Valid.setVisible(true);
+        }if(numCurso >= 2){
+            cursoName2.setText(actualUser.myCourses.get(1).getNombre());
+            cursoDesc2.setText(actualUser.myCourses.get(1).getDescripcion());
+            boolean actualValid2 = actualUser.myCourses.get(1).getValid();
+            String validName2 = actualValid2?"Aprobado":"Revision";
+            curso2Valid.setText(validName2);
+            curso2Panel.setVisible(true);
+            curso2Valid.setVisible(true);
+        }if(numCurso >= 3){
+            cursoName3.setText(actualUser.myCourses.get(2).getNombre());
+            cursoDesc3.setText(actualUser.myCourses.get(2).getDescripcion());
+            boolean actualValid3 = actualUser.myCourses.get(2).getValid();
+            String validName3 = actualValid3?"Aprobado":"Revision";
+            curso3Valid.setText(validName3);
+            curso3Panel.setVisible(true);
+            curso3Valid.setVisible(true);
+        };
+    };
+    public UsuarioView(Usuario actualUser) {
         initComponents();
+        this.actualUser = actualUser;
+        //System.out.println(actulUser.getNombre());
+        UserName.setText(actualUser.getNombre());
+        UserCorreo.setText(actualUser.getCorreo());
+        start();
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -14,24 +55,31 @@ public class UsuarioView extends javax.swing.JFrame {
         backgroundPanel = new javax.swing.JPanel();
         mainPanelLeft = new javax.swing.JPanel();
         mainPanelLeft2 = new javax.swing.JPanel();
-        mainPanelLeft3 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        UserCorreo = new javax.swing.JLabel();
+        UserName = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         mainPanelRight = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        mainPanelLeft1 = new javax.swing.JPanel();
-        mainPanelLeft6 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        mainPanelLeft4 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        mainPanelLeft5 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        curso2Valid = new javax.swing.JLabel();
+        curso1Valid = new javax.swing.JLabel();
+        curso3Valid = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        curso1Panel = new javax.swing.JPanel();
+        curso1Name = new javax.swing.JLabel();
+        cursoDesc1 = new javax.swing.JLabel();
+        curso2Panel = new javax.swing.JPanel();
+        cursoName2 = new javax.swing.JLabel();
+        cursoDesc2 = new javax.swing.JLabel();
+        curso3Panel = new javax.swing.JPanel();
+        cursoName3 = new javax.swing.JLabel();
+        cursoDesc3 = new javax.swing.JLabel();
         mainBar = new javax.swing.JPanel();
         buttonCerrar = new javax.swing.JPanel();
         buttonCerrarText = new javax.swing.JLabel();
@@ -58,45 +106,72 @@ public class UsuarioView extends javax.swing.JFrame {
 
         mainPanelLeft2.setBackground(new java.awt.Color(119, 69, 168));
 
-        mainPanelLeft3.setBackground(new java.awt.Color(119, 69, 168));
+        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel13.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Bienvenido:");
 
-        javax.swing.GroupLayout mainPanelLeft3Layout = new javax.swing.GroupLayout(mainPanelLeft3);
-        mainPanelLeft3.setLayout(mainPanelLeft3Layout);
-        mainPanelLeft3Layout.setHorizontalGroup(
-            mainPanelLeft3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 332, Short.MAX_VALUE)
-        );
-        mainPanelLeft3Layout.setVerticalGroup(
-            mainPanelLeft3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 557, Short.MAX_VALUE)
-        );
+        UserCorreo.setBackground(new java.awt.Color(255, 255, 255));
+        UserCorreo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        UserCorreo.setForeground(new java.awt.Color(255, 255, 255));
+        UserCorreo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        UserCorreo.setText("Coreo@coreo.coreo");
+
+        UserName.setBackground(new java.awt.Color(255, 255, 255));
+        UserName.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        UserName.setForeground(new java.awt.Color(255, 255, 255));
+        UserName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        UserName.setText("Pedro Perez");
+
+        jLabel14.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Correo:");
+
+        jLabel15.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Usuario:");
 
         javax.swing.GroupLayout mainPanelLeft2Layout = new javax.swing.GroupLayout(mainPanelLeft2);
         mainPanelLeft2.setLayout(mainPanelLeft2Layout);
         mainPanelLeft2Layout.setHorizontalGroup(
             mainPanelLeft2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 332, Short.MAX_VALUE)
-            .addGroup(mainPanelLeft2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(mainPanelLeft2Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(mainPanelLeft3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(mainPanelLeft2Layout.createSequentialGroup()
+                .addGroup(mainPanelLeft2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainPanelLeft2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel13))
+                    .addGroup(mainPanelLeft2Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(mainPanelLeft2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel15))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(mainPanelLeft2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(UserName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(UserCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         mainPanelLeft2Layout.setVerticalGroup(
             mainPanelLeft2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 557, Short.MAX_VALUE)
-            .addGroup(mainPanelLeft2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(mainPanelLeft2Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(mainPanelLeft3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(mainPanelLeft2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(mainPanelLeft2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(UserName)
+                    .addComponent(jLabel15))
+                .addGap(18, 18, 18)
+                .addGroup(mainPanelLeft2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14)
+                    .addComponent(UserCorreo))
+                .addContainerGap(459, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mainPanelLeftLayout = new javax.swing.GroupLayout(mainPanelLeft);
         mainPanelLeft.setLayout(mainPanelLeftLayout);
         mainPanelLeftLayout.setHorizontalGroup(
             mainPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 332, Short.MAX_VALUE)
+            .addGap(0, 334, Short.MAX_VALUE)
             .addGroup(mainPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(mainPanelLeftLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -105,7 +180,7 @@ public class UsuarioView extends javax.swing.JFrame {
         );
         mainPanelLeftLayout.setVerticalGroup(
             mainPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 557, Short.MAX_VALUE)
+            .addGap(0, 567, Short.MAX_VALUE)
             .addGroup(mainPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(mainPanelLeftLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -178,159 +253,65 @@ public class UsuarioView extends javax.swing.JFrame {
 
         mainPanelRight.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 75, -1, -1));
 
-        mainPanelLeft1.setBackground(new java.awt.Color(119, 69, 168));
-
-        mainPanelLeft6.setBackground(new java.awt.Color(119, 69, 168));
-
-        jLabel7.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Curso 1");
-
-        javax.swing.GroupLayout mainPanelLeft6Layout = new javax.swing.GroupLayout(mainPanelLeft6);
-        mainPanelLeft6.setLayout(mainPanelLeft6Layout);
-        mainPanelLeft6Layout.setHorizontalGroup(
-            mainPanelLeft6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelLeft6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(186, Short.MAX_VALUE))
-        );
-        mainPanelLeft6Layout.setVerticalGroup(
-            mainPanelLeft6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelLeft6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addContainerGap(58, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout mainPanelLeft1Layout = new javax.swing.GroupLayout(mainPanelLeft1);
-        mainPanelLeft1.setLayout(mainPanelLeft1Layout);
-        mainPanelLeft1Layout.setHorizontalGroup(
-            mainPanelLeft1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelLeft1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(mainPanelLeft6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        mainPanelLeft1Layout.setVerticalGroup(
-            mainPanelLeft1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelLeft1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(mainPanelLeft6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        mainPanelRight.add(mainPanelLeft1, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 148, -1, -1));
-
-        mainPanelLeft4.setBackground(new java.awt.Color(119, 69, 168));
-
-        jLabel3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Curso 1");
-
-        javax.swing.GroupLayout mainPanelLeft4Layout = new javax.swing.GroupLayout(mainPanelLeft4);
-        mainPanelLeft4.setLayout(mainPanelLeft4Layout);
-        mainPanelLeft4Layout.setHorizontalGroup(
-            mainPanelLeft4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelLeft4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(186, Short.MAX_VALUE))
-        );
-        mainPanelLeft4Layout.setVerticalGroup(
-            mainPanelLeft4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelLeft4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addContainerGap(59, Short.MAX_VALUE))
-        );
-
-        mainPanelRight.add(mainPanelLeft4, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 257, 261, -1));
-
-        mainPanelLeft5.setBackground(new java.awt.Color(119, 69, 168));
-
-        jLabel8.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Curso 1");
-
-        javax.swing.GroupLayout mainPanelLeft5Layout = new javax.swing.GroupLayout(mainPanelLeft5);
-        mainPanelLeft5.setLayout(mainPanelLeft5Layout);
-        mainPanelLeft5Layout.setHorizontalGroup(
-            mainPanelLeft5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelLeft5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(186, Short.MAX_VALUE))
-        );
-        mainPanelLeft5Layout.setVerticalGroup(
-            mainPanelLeft5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelLeft5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addContainerGap(59, Short.MAX_VALUE))
-        );
-
-        mainPanelRight.add(mainPanelLeft5, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 372, 261, -1));
-
-        jLabel10.setBackground(new java.awt.Color(119, 69, 168));
-        jLabel10.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Aceptado");
-        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel10.setOpaque(true);
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+        curso2Valid.setBackground(new java.awt.Color(119, 69, 168));
+        curso2Valid.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        curso2Valid.setForeground(new java.awt.Color(255, 255, 255));
+        curso2Valid.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        curso2Valid.setText("Aceptado");
+        curso2Valid.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        curso2Valid.setOpaque(true);
+        curso2Valid.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
+                curso2ValidMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel10MouseEntered(evt);
+                curso2ValidMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel10MouseExited(evt);
+                curso2ValidMouseExited(evt);
             }
         });
-        mainPanelRight.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 275, 65, 41));
+        mainPanelRight.add(curso2Valid, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 65, 41));
 
-        jLabel9.setBackground(new java.awt.Color(119, 69, 168));
-        jLabel9.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Revision");
-        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel9.setOpaque(true);
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+        curso1Valid.setBackground(new java.awt.Color(119, 69, 168));
+        curso1Valid.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        curso1Valid.setForeground(new java.awt.Color(255, 255, 255));
+        curso1Valid.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        curso1Valid.setText("Aprobado");
+        curso1Valid.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        curso1Valid.setOpaque(true);
+        curso1Valid.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel9MouseClicked(evt);
+                curso1ValidMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel9MouseEntered(evt);
+                curso1ValidMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel9MouseExited(evt);
+                curso1ValidMouseExited(evt);
             }
         });
-        mainPanelRight.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 176, 65, 41));
+        mainPanelRight.add(curso1Valid, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 65, 41));
 
-        jLabel11.setBackground(new java.awt.Color(119, 69, 168));
-        jLabel11.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Revision");
-        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel11.setOpaque(true);
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+        curso3Valid.setBackground(new java.awt.Color(119, 69, 168));
+        curso3Valid.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        curso3Valid.setForeground(new java.awt.Color(255, 255, 255));
+        curso3Valid.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        curso3Valid.setText("Revision");
+        curso3Valid.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        curso3Valid.setOpaque(true);
+        curso3Valid.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
+                curso3ValidMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel11MouseEntered(evt);
+                curso3ValidMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel11MouseExited(evt);
+                curso3ValidMouseExited(evt);
             }
         });
-        mainPanelRight.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 389, 65, 41));
+        mainPanelRight.add(curso3Valid, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, 65, 41));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(119, 69, 168));
@@ -341,6 +322,107 @@ public class UsuarioView extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(119, 69, 168));
         jLabel12.setText("Estado");
         mainPanelRight.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, -1));
+
+        jPanel5.setBackground(new java.awt.Color(216, 197, 234));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        curso1Panel.setBackground(new java.awt.Color(119, 69, 168));
+
+        curso1Name.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        curso1Name.setForeground(new java.awt.Color(255, 255, 255));
+        curso1Name.setText("Curso 1");
+
+        cursoDesc1.setFont(new java.awt.Font("Roboto", 2, 12)); // NOI18N
+        cursoDesc1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cursoDesc1.setText("Descripcion");
+
+        javax.swing.GroupLayout curso1PanelLayout = new javax.swing.GroupLayout(curso1Panel);
+        curso1Panel.setLayout(curso1PanelLayout);
+        curso1PanelLayout.setHorizontalGroup(
+            curso1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(curso1PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(curso1Name, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(185, Short.MAX_VALUE))
+            .addComponent(cursoDesc1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        curso1PanelLayout.setVerticalGroup(
+            curso1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(curso1PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(curso1Name)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cursoDesc1, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                .addGap(12, 12, 12))
+        );
+
+        jPanel5.add(curso1Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 260, -1));
+
+        curso2Panel.setBackground(new java.awt.Color(119, 69, 168));
+
+        cursoName2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        cursoName2.setForeground(new java.awt.Color(255, 255, 255));
+        cursoName2.setText("Curso 2");
+
+        cursoDesc2.setFont(new java.awt.Font("Roboto", 2, 12)); // NOI18N
+        cursoDesc2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cursoDesc2.setText("Descripcion");
+
+        javax.swing.GroupLayout curso2PanelLayout = new javax.swing.GroupLayout(curso2Panel);
+        curso2Panel.setLayout(curso2PanelLayout);
+        curso2PanelLayout.setHorizontalGroup(
+            curso2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(curso2PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cursoName2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(185, Short.MAX_VALUE))
+            .addComponent(cursoDesc2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        curso2PanelLayout.setVerticalGroup(
+            curso2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(curso2PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cursoName2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cursoDesc2, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                .addGap(7, 7, 7))
+        );
+
+        jPanel5.add(curso2Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 260, -1));
+
+        curso3Panel.setBackground(new java.awt.Color(119, 69, 168));
+
+        cursoName3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        cursoName3.setForeground(new java.awt.Color(255, 255, 255));
+        cursoName3.setText("Curso 3");
+
+        cursoDesc3.setFont(new java.awt.Font("Roboto", 2, 12)); // NOI18N
+        cursoDesc3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cursoDesc3.setText("Descripcion");
+
+        javax.swing.GroupLayout curso3PanelLayout = new javax.swing.GroupLayout(curso3Panel);
+        curso3Panel.setLayout(curso3PanelLayout);
+        curso3PanelLayout.setHorizontalGroup(
+            curso3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(curso3PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cursoName3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(186, Short.MAX_VALUE))
+            .addComponent(cursoDesc3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        curso3PanelLayout.setVerticalGroup(
+            curso3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(curso3PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cursoName3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cursoDesc3, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                .addGap(7, 7, 7))
+        );
+
+        jPanel5.add(curso3Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 261, -1));
+
+        mainPanelRight.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 90, 260, 420));
 
         backgroundPanel.add(mainPanelRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 450, 520));
 
@@ -539,29 +621,29 @@ public class UsuarioView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseEntered
+    private void curso2ValidMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curso2ValidMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel10MouseEntered
+    }//GEN-LAST:event_curso2ValidMouseEntered
 
-    private void jLabel10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseExited
+    private void curso2ValidMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curso2ValidMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel10MouseExited
+    }//GEN-LAST:event_curso2ValidMouseExited
 
-    private void jLabel9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseEntered
+    private void curso1ValidMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curso1ValidMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel9MouseEntered
+    }//GEN-LAST:event_curso1ValidMouseEntered
 
-    private void jLabel9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseExited
+    private void curso1ValidMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curso1ValidMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel9MouseExited
+    }//GEN-LAST:event_curso1ValidMouseExited
 
-    private void jLabel11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseEntered
+    private void curso3ValidMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curso3ValidMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel11MouseEntered
+    }//GEN-LAST:event_curso3ValidMouseEntered
 
-    private void jLabel11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseExited
+    private void curso3ValidMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curso3ValidMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel11MouseExited
+    }//GEN-LAST:event_curso3ValidMouseExited
 
     private void buttonCerrarTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonCerrarTextMouseClicked
         System.exit(0);
@@ -624,43 +706,45 @@ public class UsuarioView extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonSalirMouseClicked
 
     private void buttonCursosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonCursosMouseClicked
-        FormulacionDeCursoIU formu = new FormulacionDeCursoIU();
+        FormulacionDeCursoIU formu = new FormulacionDeCursoIU(actualUser);
         formu.setLocationRelativeTo(null);
         formu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_buttonCursosMouseClicked
 
     private void buttonPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonPerfilMouseClicked
-        Usuario userD = new Usuario();
+        UserIU userD = new UserIU(actualUser);
         userD.setLocationRelativeTo(null);
         userD.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_buttonPerfilMouseClicked
 
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-        FormularioDeCursoIU formoC = new FormularioDeCursoIU();
+    private void curso1ValidMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curso1ValidMouseClicked
+        FormularioDeCursoIU formoC = new FormularioDeCursoIU(actualUser);
         formoC.setLocationRelativeTo(null);
         formoC.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jLabel9MouseClicked
+    }//GEN-LAST:event_curso1ValidMouseClicked
 
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-        FormularioDeCursoIU formoC = new FormularioDeCursoIU();
+    private void curso2ValidMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curso2ValidMouseClicked
+        FormularioDeCursoIU formoC = new FormularioDeCursoIU(actualUser);
         formoC.setLocationRelativeTo(null);
         formoC.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jLabel10MouseClicked
+    }//GEN-LAST:event_curso2ValidMouseClicked
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-       FormularioDeCursoIU formoC = new FormularioDeCursoIU();
+    private void curso3ValidMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curso3ValidMouseClicked
+       FormularioDeCursoIU formoC = new FormularioDeCursoIU(actualUser);
        formoC.setLocationRelativeTo(null);
        formoC.setVisible(true);
        this.setVisible(false);
-    }//GEN-LAST:event_jLabel11MouseClicked
+    }//GEN-LAST:event_curso3ValidMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CC_Icon;
+    private javax.swing.JLabel UserCorreo;
+    private javax.swing.JLabel UserName;
     private javax.swing.JPanel backgroundPanel;
     private javax.swing.JPanel buttonCerrar;
     private javax.swing.JLabel buttonCerrarText;
@@ -668,30 +752,35 @@ public class UsuarioView extends javax.swing.JFrame {
     private javax.swing.JPanel buttonHome;
     private javax.swing.JPanel buttonPerfil;
     private javax.swing.JPanel buttonSalir;
+    private javax.swing.JLabel curso1Name;
+    private javax.swing.JPanel curso1Panel;
+    private javax.swing.JLabel curso1Valid;
+    private javax.swing.JPanel curso2Panel;
+    private javax.swing.JLabel curso2Valid;
+    private javax.swing.JPanel curso3Panel;
+    private javax.swing.JLabel curso3Valid;
+    private javax.swing.JLabel cursoDesc1;
+    private javax.swing.JLabel cursoDesc2;
+    private javax.swing.JLabel cursoDesc3;
+    private javax.swing.JLabel cursoName2;
+    private javax.swing.JLabel cursoName3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel mainBar;
     private javax.swing.JPanel mainPanelLeft;
-    private javax.swing.JPanel mainPanelLeft1;
     private javax.swing.JPanel mainPanelLeft2;
-    private javax.swing.JPanel mainPanelLeft3;
-    private javax.swing.JPanel mainPanelLeft4;
-    private javax.swing.JPanel mainPanelLeft5;
-    private javax.swing.JPanel mainPanelLeft6;
     private javax.swing.JPanel mainPanelRight;
     // End of variables declaration//GEN-END:variables
 }

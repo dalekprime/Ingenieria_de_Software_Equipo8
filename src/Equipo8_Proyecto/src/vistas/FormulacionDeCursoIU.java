@@ -5,11 +5,18 @@
 package vistas;
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import javax.swing.SwingUtilities;
+import modelos.Curso;
+import modelos.Usuario;
 
 public class FormulacionDeCursoIU extends javax.swing.JFrame {
     int xMouse, yMouse;
-    public FormulacionDeCursoIU() {
+    String modalidadValue = "";
+    String tipoValue = "";
+    Usuario actualUser;
+    public FormulacionDeCursoIU(Usuario actualUser) {
         initComponents();
+        this.actualUser = actualUser;
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -25,10 +32,10 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        buttonPresencial = new javax.swing.JRadioButton();
+        buttonDinamico = new javax.swing.JRadioButton();
+        buttonDistancia = new javax.swing.JRadioButton();
+        buttonMixto = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
         jRadioButton6 = new javax.swing.JRadioButton();
         jRadioButton7 = new javax.swing.JRadioButton();
@@ -38,15 +45,15 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
         jRadioButton11 = new javax.swing.JRadioButton();
         jTextField1 = new javax.swing.JTextField();
         mainPanelRight = new javax.swing.JPanel();
-        jRadioButton12 = new javax.swing.JRadioButton();
-        jRadioButton13 = new javax.swing.JRadioButton();
-        jRadioButton14 = new javax.swing.JRadioButton();
-        jRadioButton15 = new javax.swing.JRadioButton();
+        jRadioCharla = new javax.swing.JRadioButton();
+        buttonCurso = new javax.swing.JRadioButton();
+        buttonTaller = new javax.swing.JRadioButton();
+        buttonDiplomado = new javax.swing.JRadioButton();
         jLabel13 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        inputCourseName = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        inputCourseDesc = new javax.swing.JTextField();
         mainBar = new javax.swing.JPanel();
         buttonCerrar = new javax.swing.JPanel();
         buttonCerrarText = new javax.swing.JLabel();
@@ -124,43 +131,43 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
             }
         });
 
-        jRadioButton1.setBackground(new java.awt.Color(119, 69, 168));
-        Modalidad.add(jRadioButton1);
-        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setText("Presencial");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonPresencial.setBackground(new java.awt.Color(119, 69, 168));
+        Modalidad.add(buttonPresencial);
+        buttonPresencial.setForeground(new java.awt.Color(255, 255, 255));
+        buttonPresencial.setText("Presencial");
+        buttonPresencial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                buttonPresencialActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setBackground(new java.awt.Color(119, 69, 168));
-        Modalidad.add(jRadioButton2);
-        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton2.setText("Dinámico");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonDinamico.setBackground(new java.awt.Color(119, 69, 168));
+        Modalidad.add(buttonDinamico);
+        buttonDinamico.setForeground(new java.awt.Color(255, 255, 255));
+        buttonDinamico.setText("Dinámico");
+        buttonDinamico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                buttonDinamicoActionPerformed(evt);
             }
         });
 
-        jRadioButton3.setBackground(new java.awt.Color(119, 69, 168));
-        Modalidad.add(jRadioButton3);
-        jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton3.setText("A Distancia");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        buttonDistancia.setBackground(new java.awt.Color(119, 69, 168));
+        Modalidad.add(buttonDistancia);
+        buttonDistancia.setForeground(new java.awt.Color(255, 255, 255));
+        buttonDistancia.setText("A Distancia");
+        buttonDistancia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                buttonDistanciaActionPerformed(evt);
             }
         });
 
-        jRadioButton4.setBackground(new java.awt.Color(119, 69, 168));
-        Modalidad.add(jRadioButton4);
-        jRadioButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton4.setText("Mixto");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        buttonMixto.setBackground(new java.awt.Color(119, 69, 168));
+        Modalidad.add(buttonMixto);
+        buttonMixto.setForeground(new java.awt.Color(255, 255, 255));
+        buttonMixto.setText("Mixto");
+        buttonMixto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                buttonMixtoActionPerformed(evt);
             }
         });
 
@@ -235,6 +242,8 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
         });
 
         jTextField1.setBackground(new java.awt.Color(216, 197, 234));
+        jTextField1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(119, 69, 168));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -275,12 +284,12 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
                     .addGroup(mainPanelLeftLayout.createSequentialGroup()
                         .addGap(52, 52, 52)
                         .addGroup(mainPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton3))
+                            .addComponent(buttonDinamico)
+                            .addComponent(buttonDistancia))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(mainPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton4))
+                            .addComponent(buttonPresencial)
+                            .addComponent(buttonMixto))
                         .addGap(37, 37, 37))
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -293,12 +302,12 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(mainPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton1))
+                    .addComponent(buttonDinamico)
+                    .addComponent(buttonPresencial))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
+                    .addComponent(buttonDistancia)
+                    .addComponent(buttonMixto))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
@@ -328,47 +337,47 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
 
         mainPanelRight.setBackground(new java.awt.Color(216, 197, 234));
 
-        jRadioButton12.setBackground(new java.awt.Color(216, 197, 234));
-        Tipo.add(jRadioButton12);
-        jRadioButton12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jRadioButton12.setForeground(new java.awt.Color(119, 69, 168));
-        jRadioButton12.setText("Charla/Conferencia");
-        jRadioButton12.addActionListener(new java.awt.event.ActionListener() {
+        jRadioCharla.setBackground(new java.awt.Color(216, 197, 234));
+        Tipo.add(jRadioCharla);
+        jRadioCharla.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jRadioCharla.setForeground(new java.awt.Color(119, 69, 168));
+        jRadioCharla.setText("Charla/Conferencia");
+        jRadioCharla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton12ActionPerformed(evt);
+                jRadioCharlaActionPerformed(evt);
             }
         });
 
-        jRadioButton13.setBackground(new java.awt.Color(216, 197, 234));
-        Tipo.add(jRadioButton13);
-        jRadioButton13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jRadioButton13.setForeground(new java.awt.Color(119, 69, 168));
-        jRadioButton13.setText("Curso/Taller");
-        jRadioButton13.addActionListener(new java.awt.event.ActionListener() {
+        buttonCurso.setBackground(new java.awt.Color(216, 197, 234));
+        Tipo.add(buttonCurso);
+        buttonCurso.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        buttonCurso.setForeground(new java.awt.Color(119, 69, 168));
+        buttonCurso.setText("Curso/Taller");
+        buttonCurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton13ActionPerformed(evt);
+                buttonCursoActionPerformed(evt);
             }
         });
 
-        jRadioButton14.setBackground(new java.awt.Color(216, 197, 234));
-        Tipo.add(jRadioButton14);
-        jRadioButton14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jRadioButton14.setForeground(new java.awt.Color(119, 69, 168));
-        jRadioButton14.setText("Conjunto de Cursos/Taller");
-        jRadioButton14.addActionListener(new java.awt.event.ActionListener() {
+        buttonTaller.setBackground(new java.awt.Color(216, 197, 234));
+        Tipo.add(buttonTaller);
+        buttonTaller.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        buttonTaller.setForeground(new java.awt.Color(119, 69, 168));
+        buttonTaller.setText("Conjunto de Cursos/Taller");
+        buttonTaller.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton14ActionPerformed(evt);
+                buttonTallerActionPerformed(evt);
             }
         });
 
-        jRadioButton15.setBackground(new java.awt.Color(216, 197, 234));
-        Tipo.add(jRadioButton15);
-        jRadioButton15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jRadioButton15.setForeground(new java.awt.Color(119, 69, 168));
-        jRadioButton15.setText("Diplomado");
-        jRadioButton15.addActionListener(new java.awt.event.ActionListener() {
+        buttonDiplomado.setBackground(new java.awt.Color(216, 197, 234));
+        Tipo.add(buttonDiplomado);
+        buttonDiplomado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        buttonDiplomado.setForeground(new java.awt.Color(119, 69, 168));
+        buttonDiplomado.setText("Diplomado");
+        buttonDiplomado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton15ActionPerformed(evt);
+                buttonDiplomadoActionPerformed(evt);
             }
         });
 
@@ -390,10 +399,12 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
             }
         });
 
-        jTextField2.setBackground(new java.awt.Color(119, 69, 168));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        inputCourseName.setBackground(new java.awt.Color(119, 69, 168));
+        inputCourseName.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        inputCourseName.setForeground(new java.awt.Color(255, 255, 255));
+        inputCourseName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                inputCourseNameActionPerformed(evt);
             }
         });
 
@@ -425,10 +436,12 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
             }
         });
 
-        jTextField3.setBackground(new java.awt.Color(119, 69, 168));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        inputCourseDesc.setBackground(new java.awt.Color(119, 69, 168));
+        inputCourseDesc.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        inputCourseDesc.setForeground(new java.awt.Color(255, 255, 255));
+        inputCourseDesc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                inputCourseDescActionPerformed(evt);
             }
         });
 
@@ -447,35 +460,35 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
                         .addGroup(mainPanelRightLayout.createSequentialGroup()
                             .addGap(40, 40, 40)
                             .addGroup(mainPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jRadioButton15)
-                                .addComponent(jRadioButton12)
-                                .addComponent(jRadioButton13)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jRadioButton14)))
+                                .addComponent(buttonDiplomado)
+                                .addComponent(jRadioCharla)
+                                .addComponent(buttonCurso)
+                                .addComponent(inputCourseName, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buttonTaller)))
                         .addGroup(mainPanelRightLayout.createSequentialGroup()
                             .addGap(17, 17, 17)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(inputCourseDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         mainPanelRightLayout.setVerticalGroup(
             mainPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelRightLayout.createSequentialGroup()
                 .addGap(90, 90, 90)
-                .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+                .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(jRadioButton13)
+                .addComponent(inputCourseName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton12)
+                .addComponent(buttonCurso)
+                .addGap(18, 18, 18)
+                .addComponent(jRadioCharla)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton14)
+                .addComponent(buttonTaller)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton15)
+                .addComponent(buttonDiplomado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+                .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputCourseDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
@@ -658,21 +671,21 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel12MouseExited
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    private void buttonPresencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPresencialActionPerformed
+        modalidadValue = "Presencial";
+    }//GEN-LAST:event_buttonPresencialActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    private void buttonDinamicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDinamicoActionPerformed
+        modalidadValue = "Dinamico";
+    }//GEN-LAST:event_buttonDinamicoActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    private void buttonDistanciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDistanciaActionPerformed
+        modalidadValue = "Distancia";
+    }//GEN-LAST:event_buttonDistanciaActionPerformed
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    private void buttonMixtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMixtoActionPerformed
+        modalidadValue = "Mixto";
+    }//GEN-LAST:event_buttonMixtoActionPerformed
 
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
         // TODO add your handling code here:
@@ -706,21 +719,21 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jRadioButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton12ActionPerformed
+    private void jRadioCharlaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioCharlaActionPerformed
+         tipoValue = "Charla";
+    }//GEN-LAST:event_jRadioCharlaActionPerformed
 
-    private void jRadioButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton13ActionPerformed
+    private void buttonCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCursoActionPerformed
+         tipoValue = "Curso";
+    }//GEN-LAST:event_buttonCursoActionPerformed
 
-    private void jRadioButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton14ActionPerformed
+    private void buttonTallerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTallerActionPerformed
+        tipoValue = "Taller";
+    }//GEN-LAST:event_buttonTallerActionPerformed
 
-    private void jRadioButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton15ActionPerformed
+    private void buttonDiplomadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDiplomadoActionPerformed
+        tipoValue = "Diplomado";
+    }//GEN-LAST:event_buttonDiplomadoActionPerformed
 
     private void jLabel13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseEntered
         jLabel13.setForeground(Color.white);
@@ -730,9 +743,9 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(42, 40, 44));
     }//GEN-LAST:event_jLabel13MouseExited
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void inputCourseNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCourseNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_inputCourseNameActionPerformed
 
     private void jLabel15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseEntered
         // TODO add your handling code here:
@@ -787,12 +800,12 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel23MouseExited
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void inputCourseDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCourseDescActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_inputCourseDescActionPerformed
 
     private void buttonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSalirMouseClicked
-       UsuarioView userView = new UsuarioView();
+       UsuarioView userView = new UsuarioView(actualUser);
        userView.setLocationRelativeTo(null);
        userView.setVisible(true);
        this.setVisible(false);
@@ -808,7 +821,10 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
        javax.swing.JOptionPane.showMessageDialog(this, "Proyecto Registrado. \n Espere a que sea revisado y evaluado.");
-       UsuarioView userView = new UsuarioView();
+       Curso cursoActual = new Curso(inputCourseName.getText(), inputCourseDesc.getText(), modalidadValue, tipoValue);
+       cursoActual.formular(actualUser.getID());
+       actualUser.ingresar();
+       UsuarioView userView = new UsuarioView(actualUser);
        userView.setLocationRelativeTo(null);
        userView.setVisible(true);
        this.setVisible(false);
@@ -824,8 +840,17 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
     private javax.swing.JPanel backgroundPanel;
     private javax.swing.JPanel buttonCerrar;
     private javax.swing.JLabel buttonCerrarText;
+    private javax.swing.JRadioButton buttonCurso;
+    private javax.swing.JRadioButton buttonDinamico;
+    private javax.swing.JRadioButton buttonDiplomado;
+    private javax.swing.JRadioButton buttonDistancia;
     private javax.swing.JPanel buttonHome;
+    private javax.swing.JRadioButton buttonMixto;
+    private javax.swing.JRadioButton buttonPresencial;
     private javax.swing.JPanel buttonSalir;
+    private javax.swing.JRadioButton buttonTaller;
+    private javax.swing.JTextField inputCourseDesc;
+    private javax.swing.JTextField inputCourseName;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -836,24 +861,15 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton11;
-    private javax.swing.JRadioButton jRadioButton12;
-    private javax.swing.JRadioButton jRadioButton13;
-    private javax.swing.JRadioButton jRadioButton14;
-    private javax.swing.JRadioButton jRadioButton15;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JRadioButton jRadioButton9;
+    private javax.swing.JRadioButton jRadioCharla;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JPanel mainBar;
     private javax.swing.JPanel mainPanelLeft;
     private javax.swing.JPanel mainPanelRight;
