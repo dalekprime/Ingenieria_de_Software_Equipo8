@@ -11,6 +11,7 @@ import java.util.ArrayList;
  * @author bryan
  */
 public class Curso {
+    int userID;
     String nombre;
     String descripcion;
     String modalidad;
@@ -18,7 +19,8 @@ public class Curso {
     boolean aprobado;
     public ArrayList <Cohorte> cohortes;
     FormulacionDeCurso formulacion;
-    public Curso(String nombre, String descripcion, String modalidad, String tipo){
+    public Curso(int ID, String nombre, String descripcion, String modalidad, String tipo){
+        this.userID = ID;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.modalidad = modalidad;
@@ -69,5 +71,8 @@ public class Curso {
     };
     public boolean getValid(){
         return aprobado;
+    };
+    public int getID(){
+        return userID;
     };
 };

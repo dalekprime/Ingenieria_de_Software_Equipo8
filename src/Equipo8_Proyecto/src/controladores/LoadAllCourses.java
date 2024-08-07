@@ -27,7 +27,7 @@ public class LoadAllCourses {
                     String actualCourseMode  = String.valueOf(datosCurso[3]);
                     String actualCourseType = String.valueOf(datosCurso[4]);
                     String actualCourseValid = String.valueOf(datosCurso[5]);
-                    Curso newCourse = new Curso(actualCourseName, actualCourseDesc, actualCourseMode, actualCourseType);
+                    Curso newCourse = new Curso(actualCouserID, actualCourseName, actualCourseDesc, actualCourseMode, actualCourseType);
                     newCourse.setValid(actualCourseValid);
                     actualCourses.add(newCourse);
                 };

@@ -66,7 +66,7 @@ public class Usuario extends Persona{
                     String actualCourseType = String.valueOf(datosCurso[4]);
                     String actualCourseValid = String.valueOf(datosCurso[5]);
                     if(actualUserID == this.ID){
-                       Curso newCourse = new Curso(actualCourseName, actualCourseDesc, actualCourseMode, actualCourseType);
+                       Curso newCourse = new Curso(actualUserID, actualCourseName, actualCourseDesc, actualCourseMode, actualCourseType);
                        newCourse.setValid(actualCourseValid);
                        myCourses.add(newCourse);
                        //System.out.println(newCourse.nombre);

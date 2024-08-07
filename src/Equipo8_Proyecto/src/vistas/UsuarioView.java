@@ -720,24 +720,36 @@ public class UsuarioView extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonPerfilMouseClicked
 
     private void curso1ValidMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curso1ValidMouseClicked
-        FormularioDeCursoIU formoC = new FormularioDeCursoIU(actualUser);
-        formoC.setLocationRelativeTo(null);
-        formoC.setVisible(true);
-        this.setVisible(false);
+        if(!(actualUser.myCourses.get(0).getValid())){
+            FormularioDeCursoIU formoC = new FormularioDeCursoIU(actualUser);
+            formoC.setLocationRelativeTo(null);
+            formoC.setVisible(true);
+            this.setVisible(false);
+        }else{
+            javax.swing.JOptionPane.showMessageDialog(this, "Este curso ya fue aprobado");
+        };
     }//GEN-LAST:event_curso1ValidMouseClicked
 
     private void curso2ValidMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curso2ValidMouseClicked
-        FormularioDeCursoIU formoC = new FormularioDeCursoIU(actualUser);
-        formoC.setLocationRelativeTo(null);
-        formoC.setVisible(true);
-        this.setVisible(false);
+        if(!(actualUser.myCourses.get(1).getValid())){
+            FormularioDeCursoIU formoC = new FormularioDeCursoIU(actualUser);
+            formoC.setLocationRelativeTo(null);
+            formoC.setVisible(true);
+            this.setVisible(false);
+        }else{
+            javax.swing.JOptionPane.showMessageDialog(this, "Este curso ya fue aprobado");
+        };
     }//GEN-LAST:event_curso2ValidMouseClicked
 
     private void curso3ValidMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curso3ValidMouseClicked
-       FormularioDeCursoIU formoC = new FormularioDeCursoIU(actualUser);
-       formoC.setLocationRelativeTo(null);
-       formoC.setVisible(true);
-       this.setVisible(false);
+       if(!(actualUser.myCourses.get(2).getValid())){
+            FormularioDeCursoIU formoC = new FormularioDeCursoIU(actualUser);
+            formoC.setLocationRelativeTo(null);
+            formoC.setVisible(true);
+            this.setVisible(false);
+        }else{
+            javax.swing.JOptionPane.showMessageDialog(this, "Este curso ya fue aprobado");
+        };
     }//GEN-LAST:event_curso3ValidMouseClicked
 
 

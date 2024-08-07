@@ -1,6 +1,10 @@
 package vistas;
 import controladores.LoadAllCourses;
 import java.awt.Color;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import modelos.Curso;
@@ -10,6 +14,7 @@ public class AdminIU extends javax.swing.JFrame {
     LoadAllCourses loader;
     int coursesNum;
     ArrayList <Curso> allCourses;
+    @SuppressWarnings("empty-statement")
     private void load(){
         loader = new LoadAllCourses();
         allCourses = loader.loadCourse();
@@ -49,6 +54,21 @@ public class AdminIU extends javax.swing.JFrame {
             cursoName6.setText(allCourses.get(5).getNombre());
             cursoDesc6.setText(allCourses.get(5).getDescripcion());
             cursoPanel6.setVisible(true);
+        };
+    };
+    private void validCourse(int position){
+        allCourses.get(position).setValid("true");
+        updateCourse();
+    };
+    @SuppressWarnings("empty-statement")
+    private void updateCourse(){
+        File file = new File(System.getProperty("user.dir"), "cursos.txt");
+        try(FileWriter writer = new FileWriter(file, false); BufferedWriter writeBF = new BufferedWriter(writer)){
+            for(int i = 0; i < coursesNum; i++){
+                writeBF.write(allCourses.get(i).getID() + "#" + allCourses.get(i).getNombre() + "#" + allCourses.get(i).getDescripcion() + "#" + allCourses.get(i).getModalidad() + "#" + allCourses.get(i).getTipo() + "#" + allCourses.get(i).getValid() + "\n");
+            };
+        }catch (IOException e){
+            System.out.println("Error al leer el archivo: " + e.getMessage());
         };
     };
     public AdminIU() {
@@ -245,6 +265,11 @@ public class AdminIU extends javax.swing.JFrame {
         cursoButtonText1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cursoButtonText1.setText("Validar");
         cursoButtonText1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cursoButtonText1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cursoButtonText1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout cursoButton1Layout = new javax.swing.GroupLayout(cursoButton1);
         cursoButton1.setLayout(cursoButton1Layout);
@@ -309,6 +334,11 @@ public class AdminIU extends javax.swing.JFrame {
         cursoButtonText2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cursoButtonText2.setText("Validar");
         cursoButtonText2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cursoButtonText2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cursoButtonText2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout cursoButton2Layout = new javax.swing.GroupLayout(cursoButton2);
         cursoButton2.setLayout(cursoButton2Layout);
@@ -373,6 +403,11 @@ public class AdminIU extends javax.swing.JFrame {
         cursoButtonText3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cursoButtonText3.setText("Validar");
         cursoButtonText3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cursoButtonText3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cursoButtonText3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout cursoButton3Layout = new javax.swing.GroupLayout(cursoButton3);
         cursoButton3.setLayout(cursoButton3Layout);
@@ -437,6 +472,11 @@ public class AdminIU extends javax.swing.JFrame {
         cursoButtonText4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cursoButtonText4.setText("Validar");
         cursoButtonText4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cursoButtonText4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cursoButtonText4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout cursoButton4Layout = new javax.swing.GroupLayout(cursoButton4);
         cursoButton4.setLayout(cursoButton4Layout);
@@ -501,6 +541,11 @@ public class AdminIU extends javax.swing.JFrame {
         cursoButtonText5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cursoButtonText5.setText("Validar");
         cursoButtonText5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cursoButtonText5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cursoButtonText5MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout cursoButton5Layout = new javax.swing.GroupLayout(cursoButton5);
         cursoButton5.setLayout(cursoButton5Layout);
@@ -565,6 +610,11 @@ public class AdminIU extends javax.swing.JFrame {
         cursoButtonText6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cursoButtonText6.setText("Validar");
         cursoButtonText6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cursoButtonText6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cursoButtonText6MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout cursoButton6Layout = new javax.swing.GroupLayout(cursoButton6);
         cursoButton6.setLayout(cursoButton6Layout);
@@ -823,6 +873,30 @@ public class AdminIU extends javax.swing.JFrame {
         login.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_buttonSalirMouseClicked
+
+    private void cursoButtonText1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cursoButtonText1MouseClicked
+        validCourse(0);
+    }//GEN-LAST:event_cursoButtonText1MouseClicked
+
+    private void cursoButtonText2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cursoButtonText2MouseClicked
+        validCourse(1);
+    }//GEN-LAST:event_cursoButtonText2MouseClicked
+
+    private void cursoButtonText3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cursoButtonText3MouseClicked
+        validCourse(2);
+    }//GEN-LAST:event_cursoButtonText3MouseClicked
+
+    private void cursoButtonText4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cursoButtonText4MouseClicked
+        validCourse(3);
+    }//GEN-LAST:event_cursoButtonText4MouseClicked
+
+    private void cursoButtonText5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cursoButtonText5MouseClicked
+        validCourse(4);
+    }//GEN-LAST:event_cursoButtonText5MouseClicked
+
+    private void cursoButtonText6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cursoButtonText6MouseClicked
+        validCourse(5);
+    }//GEN-LAST:event_cursoButtonText6MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

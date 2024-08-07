@@ -821,7 +821,7 @@ public class FormulacionDeCursoIU extends javax.swing.JFrame {
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
        javax.swing.JOptionPane.showMessageDialog(this, "Proyecto Registrado. \n Espere a que sea revisado y evaluado.");
-       Curso cursoActual = new Curso(inputCourseName.getText(), inputCourseDesc.getText(), modalidadValue, tipoValue);
+       Curso cursoActual = new Curso(actualUser.getID(), inputCourseName.getText(), inputCourseDesc.getText(), modalidadValue, tipoValue);
        cursoActual.formular(actualUser.getID());
        actualUser.ingresar();
        UsuarioView userView = new UsuarioView(actualUser);
