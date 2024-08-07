@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vistas;
+import controladores.LoadAllCourses;
 import controladores.Login;
 import java.awt.Color;
 import javax.swing.BorderFactory;
