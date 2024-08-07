@@ -721,7 +721,7 @@ public class UsuarioView extends javax.swing.JFrame {
 
     private void curso1ValidMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curso1ValidMouseClicked
         if(!(actualUser.myCourses.get(0).getValid())){
-            FormularioDeCursoIU formoC = new FormularioDeCursoIU(actualUser);
+            FormularioDeCursoIU formoC = new FormularioDeCursoIU(actualUser, 0);
             formoC.setLocationRelativeTo(null);
             formoC.setVisible(true);
             this.setVisible(false);
@@ -732,7 +732,7 @@ public class UsuarioView extends javax.swing.JFrame {
 
     private void curso2ValidMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curso2ValidMouseClicked
         if(!(actualUser.myCourses.get(1).getValid())){
-            FormularioDeCursoIU formoC = new FormularioDeCursoIU(actualUser);
+            FormularioDeCursoIU formoC = new FormularioDeCursoIU(actualUser, 1);
             formoC.setLocationRelativeTo(null);
             formoC.setVisible(true);
             this.setVisible(false);
@@ -743,7 +743,7 @@ public class UsuarioView extends javax.swing.JFrame {
 
     private void curso3ValidMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_curso3ValidMouseClicked
        if(!(actualUser.myCourses.get(2).getValid())){
-            FormularioDeCursoIU formoC = new FormularioDeCursoIU(actualUser);
+            FormularioDeCursoIU formoC = new FormularioDeCursoIU(actualUser, 2);
             formoC.setLocationRelativeTo(null);
             formoC.setVisible(true);
             this.setVisible(false);

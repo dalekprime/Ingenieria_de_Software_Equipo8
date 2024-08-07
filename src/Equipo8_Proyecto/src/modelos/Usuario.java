@@ -47,6 +47,12 @@ public class Usuario extends Persona{
         public String getClave(){
             return clave;
         };
+        public void setCorreo(String newCorreo){
+            this.correo = newCorreo;
+        };
+        public void setClave(String newClave){
+            this.clave = newClave;
+        };
         public static void registrarCurso(){}
         public static void modificarInformacion(){}
         public static void registrarse(){

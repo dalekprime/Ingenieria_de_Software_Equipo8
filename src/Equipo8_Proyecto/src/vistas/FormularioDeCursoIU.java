@@ -6,9 +6,15 @@ import modelos.Usuario;
 public class FormularioDeCursoIU extends javax.swing.JFrame {
     int xMouse, yMouse;
     Usuario actualUser;
-    public FormularioDeCursoIU(Usuario actualUser) {
+    private void load(int actualCourse){
+        cursoDesc.setText(actualUser.myCourses.get(actualCourse).getNombre());
+        cursoName.setText(actualUser.myCourses.get(actualCourse).getDescripcion());
+        cursoTipo.setText(actualUser.myCourses.get(actualCourse).getTipo());
+    };
+    public FormularioDeCursoIU(Usuario actualUser, int actualCourse) {
         initComponents();
         this.actualUser = actualUser;
+        load(actualCourse);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -54,6 +60,9 @@ public class FormularioDeCursoIU extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
+        cursoName = new javax.swing.JLabel();
+        cursoDesc = new javax.swing.JLabel();
+        cursoTipo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -561,20 +570,44 @@ public class FormularioDeCursoIU extends javax.swing.JFrame {
         jLabel20.setForeground(new java.awt.Color(119, 69, 168));
         jLabel20.setText("n");
 
+        cursoName.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        cursoName.setForeground(new java.awt.Color(42, 40, 44));
+        cursoName.setText("Curso 1");
+
+        cursoDesc.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        cursoDesc.setForeground(new java.awt.Color(42, 40, 44));
+        cursoDesc.setText("Descripcion");
+
+        cursoTipo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        cursoTipo.setForeground(new java.awt.Color(42, 40, 44));
+        cursoTipo.setText("Tipo");
+
         javax.swing.GroupLayout mainPanelRightLayout = new javax.swing.GroupLayout(mainPanelRight);
         mainPanelRight.setLayout(mainPanelRightLayout);
         mainPanelRightLayout.setHorizontalGroup(
             mainPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelRightLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cursoName, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(151, 151, 151))
             .addGroup(mainPanelRightLayout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addGroup(mainPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(86, 86, 86)
-                .addComponent(jLabel20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel19)
+                .addGroup(mainPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainPanelRightLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addGroup(mainPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cursoDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(mainPanelRightLayout.createSequentialGroup()
+                                .addGroup(mainPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(86, 86, 86)
+                                .addComponent(jLabel20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel19))))
+                    .addGroup(mainPanelRightLayout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(cursoTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(88, Short.MAX_VALUE))
         );
         mainPanelRightLayout.setVerticalGroup(
@@ -582,14 +615,20 @@ public class FormularioDeCursoIU extends javax.swing.JFrame {
             .addGroup(mainPanelRightLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel16)
-                .addGap(49, 49, 49)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cursoName, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel17)
-                .addGap(151, 151, 151)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cursoDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(122, 122, 122)
                 .addGroup(mainPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
                     .addComponent(jLabel19)
                     .addComponent(jLabel20))
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cursoTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(210, Short.MAX_VALUE))
         );
 
         backgroundPanel.add(mainPanelRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 450, 520));
@@ -790,6 +829,9 @@ public class FormularioDeCursoIU extends javax.swing.JFrame {
     private javax.swing.JPanel buttonHome;
     private javax.swing.JPanel buttonSalir;
     private javax.swing.ButtonGroup caracter;
+    private javax.swing.JLabel cursoDesc;
+    private javax.swing.JLabel cursoName;
+    private javax.swing.JLabel cursoTipo;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

@@ -1,11 +1,54 @@
 package vistas;
 import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import modelos.Usuario;
 
 public class UserIU extends javax.swing.JFrame {
     int xMouse, yMouse;
     Usuario actualUser;
+    ArrayList<Usuario>userList;
+    int actualUserPosition;
+    private void loadUsers(){
+        userList = new ArrayList<Usuario>();
+        File file = new File(System.getProperty("user.dir"), "datos.txt");
+        try(FileReader reader = new FileReader(file); BufferedReader lector = new BufferedReader(reader)){
+                String linea;
+                int i = 0;
+                while ((linea = lector.readLine()) != null) {
+                    String[] datosUsuario = linea.split("#");
+                    String correoUsuarioArchivo = datosUsuario[0];
+                    String NombreUsuarioArchivo = datosUsuario[1];
+                    String userCedula = datosUsuario[2];
+                    String contrasenaArchivo = datosUsuario[4];
+                    int userID  = Integer.parseInt(String.valueOf(datosUsuario[5]));
+                    if(userID == actualUser.getID()){
+                        actualUserPosition = i;
+                    };
+                    Usuario newUser = new Usuario(userID, NombreUsuarioArchivo, correoUsuarioArchivo, userCedula, contrasenaArchivo);
+                    userList.add(newUser);
+                    i++;
+                };
+            }catch (IOException e){
+                System.out.println("Error al leer el archivo: " + e.getMessage());
+            };
+    };
+    private void saveInfo(){
+        File file = new File(System.getProperty("user.dir"), "datos.txt");
+        try(FileWriter writer = new FileWriter(file, false); BufferedWriter writeBF = new BufferedWriter(writer)){
+            for(int i = 0; i < userList.size(); i++){
+                writeBF.write(userList.get(i).getCorreo() + "#" + userList.get(i).getNombre() + "#" + userList.get(i).getCedula() + "#" + 111 + "#" + userList.get(i).getClave() + "#" + userList.get(i).getID() + "\n");
+            };
+        }catch (IOException e){
+            System.out.println("Error al leer el archivo: " + e.getMessage());
+        };
+    };
     public UserIU(Usuario actualUser) {
         initComponents();
         this.actualUser = actualUser;
@@ -14,6 +57,7 @@ public class UserIU extends javax.swing.JFrame {
         inputClave.setText(actualUser.getClave());
         inputCorreo.setText(actualUser.getCorreo());
         inputNombre.setText(actualUser.getNombre());
+        loadUsers();
     }
 
     @SuppressWarnings("unchecked")
@@ -252,6 +296,9 @@ public class UserIU extends javax.swing.JFrame {
         jLabel15.setText("Editar");
         jLabel15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel15MouseEntered(evt);
             }
@@ -267,6 +314,9 @@ public class UserIU extends javax.swing.JFrame {
         jLabel16.setText("Editar");
         jLabel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel16MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel16MouseEntered(evt);
             }
@@ -282,6 +332,9 @@ public class UserIU extends javax.swing.JFrame {
         jLabel17.setText("Editar");
         jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel17MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel17MouseEntered(evt);
             }
@@ -290,7 +343,6 @@ public class UserIU extends javax.swing.JFrame {
             }
         });
 
-        inputNombre.setEditable(false);
         inputNombre.setBackground(new java.awt.Color(119, 69, 168));
         inputNombre.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         inputNombre.setForeground(new java.awt.Color(255, 255, 255));
@@ -301,7 +353,6 @@ public class UserIU extends javax.swing.JFrame {
             }
         });
 
-        inputClave.setEditable(false);
         inputClave.setBackground(new java.awt.Color(119, 69, 168));
         inputClave.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         inputClave.setForeground(new java.awt.Color(255, 255, 255));
@@ -312,7 +363,6 @@ public class UserIU extends javax.swing.JFrame {
             }
         });
 
-        inputCorreo.setEditable(false);
         inputCorreo.setBackground(new java.awt.Color(119, 69, 168));
         inputCorreo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         inputCorreo.setForeground(new java.awt.Color(255, 255, 255));
@@ -483,6 +533,27 @@ public class UserIU extends javax.swing.JFrame {
        userView.setVisible(true);
        this.setVisible(false);
     }//GEN-LAST:event_buttonSalirMouseClicked
+
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        userList.get(actualUserPosition).setNombre(inputNombre.getText());
+        actualUser.setNombre(inputNombre.getText());
+        saveInfo();
+        javax.swing.JOptionPane.showMessageDialog(this, "Nombre Cambiado");
+    }//GEN-LAST:event_jLabel15MouseClicked
+
+    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
+        userList.get(actualUserPosition).setCorreo(inputCorreo.getText());
+        actualUser.setCorreo(inputCorreo.getText());
+        saveInfo();
+        javax.swing.JOptionPane.showMessageDialog(this, "Correo Cambiado");
+    }//GEN-LAST:event_jLabel16MouseClicked
+
+    private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
+        userList.get(actualUserPosition).setClave(inputClave.getText());
+        actualUser.setClave(inputClave.getText());
+        saveInfo();
+        javax.swing.JOptionPane.showMessageDialog(this, "Clave Cambiada");
+    }//GEN-LAST:event_jLabel17MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
