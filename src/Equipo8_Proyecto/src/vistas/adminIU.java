@@ -876,26 +876,32 @@ public class AdminIU extends javax.swing.JFrame {
 
     private void cursoButtonText1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cursoButtonText1MouseClicked
         validCourse(0);
+        javax.swing.JOptionPane.showMessageDialog(this, "Curso Aprobado");
     }//GEN-LAST:event_cursoButtonText1MouseClicked
 
     private void cursoButtonText2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cursoButtonText2MouseClicked
         validCourse(1);
+        javax.swing.JOptionPane.showMessageDialog(this, "Curso Aprobado");
     }//GEN-LAST:event_cursoButtonText2MouseClicked
 
     private void cursoButtonText3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cursoButtonText3MouseClicked
         validCourse(2);
+        javax.swing.JOptionPane.showMessageDialog(this, "Curso Aprobado");
     }//GEN-LAST:event_cursoButtonText3MouseClicked
 
     private void cursoButtonText4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cursoButtonText4MouseClicked
         validCourse(3);
+        javax.swing.JOptionPane.showMessageDialog(this, "Curso Aprobado");
     }//GEN-LAST:event_cursoButtonText4MouseClicked
 
     private void cursoButtonText5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cursoButtonText5MouseClicked
         validCourse(4);
+        javax.swing.JOptionPane.showMessageDialog(this, "Curso Aprobado");
     }//GEN-LAST:event_cursoButtonText5MouseClicked
 
     private void cursoButtonText6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cursoButtonText6MouseClicked
         validCourse(5);
+        javax.swing.JOptionPane.showMessageDialog(this, "Curso Aprobado");
     }//GEN-LAST:event_cursoButtonText6MouseClicked
 
 
